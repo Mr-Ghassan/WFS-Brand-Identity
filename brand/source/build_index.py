@@ -61,7 +61,7 @@ L.append('- `WFS_Wordmark_Dark` / `WFS_Wordmark_Monochrome`: the wordmark is one
 L.append('- `WFS_Logo_Full_Bilingual`: requires the licensed **Myriad Arabic** font to outline the Arabic descriptor. It was not available in the build environment; no substitute font was used. Add the font to `$WFS_FONT_DIR` and run `source/build_all.sh` to generate it.')
 L.append('- Native `.ai`: see above.\n')
 L.append('## Guidelines & sources\n')
-L.append('- `guidelines/WFS_Brand_Guidelines_2026.pdf` — A4 landscape, 40 pages · `guidelines/source/` HTML + builder · `guidelines/preview/` page PNGs')
+L.append('- `guidelines/WFS_Brand_Guidelines_2026.pdf` — A4 landscape, 53 pages · `guidelines/source/` HTML + builder · `guidelines/preview/` page PNGs')
 L.append('- `source/master/icon_geometry.json`, `source/master/wordmark_geometry.json` — numeric vector masters (circles, biarcs, paths)')
 L.append('- `source/reference/` — the approved raster artwork the masters were reconstructed from')
 L.append('- `source/qa/QA_REPORT.md` — automated validation results')

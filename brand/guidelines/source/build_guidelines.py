@@ -10,6 +10,7 @@ sys.path.insert(0, os.path.join(HERE, '..', '..', 'source'))
 import brand_config as B
 import logo_lib as L
 import gl_components as C
+import gl_ui as U
 from gl_components import A, icon, mock
 
 FONT_DIR = B.font_dir()
@@ -28,6 +29,8 @@ def font_faces():
         for sub, rng in (('latin', 'U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD'),
                          ('latin-ext', 'U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF')):
             ff.append(f"@font-face{{font-family:'Instrument Sans';font-weight:{w};src:url('fonts/InstrumentSans-{n}-{sub}.ttf');unicode-range:{rng}}}")
+    for w, n in ((400, 'Regular'), (500, 'Medium')):
+        ff.append(f"@font-face{{font-family:'IBM Plex Mono';font-weight:{w};src:url('fonts/IBMPlexMono-{n}-latin.ttf')}}")
     if AR_NATIVE:
         for p in AR_FILES:
             b = os.path.basename(p).lower()
@@ -50,6 +53,7 @@ CSS = r'''
 :root { --en: 'Instrument Sans', system-ui, sans-serif; --ar: %AR%; --dark:#022329; --deep:#0E3D42; --teal:#14B8A6; --mint:#7FE3D6; --off:#F3F5F2;
         --t700:#0F7C74; --t800:#115E5F; --s600:#4A5E61; --s400:#80918F; --line:#D6DEDB; --mist:#9DB5B3; --ldark:#1E4A4F }
 * { box-sizing: border-box; margin: 0; padding: 0 }
+code, pre { font-family: "IBM Plex Mono", monospace }
 html, body { background: #555 }
 body { font-family: var(--en); -webkit-font-smoothing: antialiased; font-kerning: normal }
 .page { width: 297mm; height: 210mm; position: relative; overflow: hidden; background: var(--off); color: var(--dark); break-after: page; page-break-after: always }
@@ -228,26 +232,41 @@ page('01 · Brand', 'Brand personality', f'''
 </div>''', toc='Brand personality')
 
 # ================================================================= 06 LOGO CONCEPT
-page('02 · Logo', 'Logo concept — from approved artwork to master', f'''
+IP = L.ICON['parameters']
+def step_svg(k):
+    R_, r_, rho = IP['R'], IP['r'], IP['rho']
+    e0 = L.ICON['circles'][2]
+    g = f'<circle r="{R_}" fill="none" stroke="#9DB5B3" stroke-width="16"/><circle r="{r_}" fill="none" stroke="#9DB5B3" stroke-width="16"/>'
+    if k >= 1:
+        g += f'<circle cx="{e0["centre"][0]}" cy="{e0["centre"][1]}" r="{rho}" fill="none" stroke="#14B8A6" stroke-width="14" stroke-dasharray="40 26"/>'
+        e = list(L.ICON['edges'].values())[0]
+        g += f'<path d="{e["d"]}" fill="none" stroke="#022329" stroke-width="30" stroke-linecap="round"/><circle cx="{e["p0"][0]}" cy="{e["p0"][1]}" r="34" fill="#14B8A6"/>'
+    if k >= 2:
+        g += ''.join(f'<path d="{e["d"]}" fill="none" stroke="#022329" stroke-width="30" stroke-linecap="round"/>' for e in L.ICON['edges'].values())
+    if k >= 3:
+        g = L.icon_paths(P['primary']['blades'], ids=False)
+    vb = '-1300 -1300 2600 2600' if k == 1 else '-620 -620 1240 1240'
+    return f'<svg viewBox="{vb}" style="width:100%;aspect-ratio:1">{g}</svg>'
+steps = [('Field', 'Two concentric circles: the outer field (R 500) and the aperture (r 190).'),
+         ('Edge', 'One circle (ρ 520) tangent to the aperture: the edge leaves the opening without a kink.'),
+         ('Rotate', 'The edge repeats five times at exactly 72° — five entities, one system.'),
+         ('Unify', 'Five blades, a tonal ramp from Mint to WFS Dark: many fields, one view.')]
+page('02 · Logo', 'Logo concept — designed from first principles', f'''
 <div class="c g12">
   <div style="grid-column:1/5">
-    <div class="eb">Logo concept</div><h1>Approved form,<br>rebuilt with precision</h1>
-    <p style="margin-top:5mm">The approved icon and wordmark define the geometry and character of WFS. The metallic gold/blue rendering was a presentation effect, not the identity. For version 1.0 both marks were reconstructed as clean vectors and translated into the WFS teal palette.</p>
+    <div class="eb">Logo concept · v2</div><h1>Five fields,<br>one aperture</h1>
+    <p style="margin-top:5mm">The WFS icon is an original, parametric aperture. It keeps the approved idea — separate financial fields converging into one controlled view — and rebuilds it with perfect geometry: exact five-fold symmetry and nothing but circular arcs.</p>
     <ul class="clean" style="margin-top:5mm">
-      <li><b>Icon</b> — five-blade aperture rebuilt from circles only: 10 boundary arcs + 5 biarc edges (G1). Silhouette IoU vs approved art 0.992.</li>
-      <li><b>Wordmark</b> — traced at 3× super-sampling, straight strokes snapped to true horizontals/verticals, curves optimised. IoU 0.997.</li>
-      <li><b>Colour</b> — gold/silver/graphite materials mapped to Mint, Teal and Deep tones. Old Concept C colours are retired.</li>
+      <li><b>Precision</b> — every curve is an arc of one of seven circles; every tip is a true tangent.</li>
+      <li><b>Balance</b> — rotational symmetry means the mark is equally weighted at every size.</li>
+      <li><b>Depth</b> — the premium version adds light and soft contact shadows, built from gradients only.</li>
     </ul>
+    <div style="margin-top:5mm;display:flex;align-items:center;gap:3mm"><img src="{A}/source/reference/approved_icon_reference.png" style="width:16mm;filter:grayscale(1);opacity:.55"><span class="cap">Concept study that defined the idea (retired artwork and colours).</span></div>
   </div>
-  <div style="grid-column:5/13;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr auto;gap:4mm">
-    <div class="panel" style="padding:4mm;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff"><div class="cap" style="align-self:flex-start">Approved reference (raster, concept colours — retired)</div>
-      {img("source/reference/approved_icon_reference.png", "width:52mm;margin:3mm 0;filter:saturate(.5);opacity:.85")}{img("source/reference/approved_wordmark_reference.png", "width:66mm;filter:saturate(.5);opacity:.85")}</div>
-    <div class="panel" style="padding:4mm;display:flex;flex-direction:column;align-items:center;justify-content:center"><div class="cap" style="align-self:flex-start">WFS master 1.0 (vector, WFS palette)</div>
-      {img("icon/svg/WFS_Icon_Primary.svg", "width:52mm;margin:3mm 0")}{img("wordmark/svg/WFS_Wordmark_Primary.svg", "width:62mm;margin-top:2mm")}</div>
-    <div class="panel" style="grid-column:1/3;padding:3mm 4mm;display:flex;gap:4mm;align-items:center">
-      <span class="cap" style="width:34mm">Material → colour translation</span>
-      {''.join(f'<div style="display:flex;align-items:center;gap:1.5mm;font-size:6.6pt"><span style="width:5mm;height:5mm;border-radius:50%;background:{a}"></span>→<span style="width:5mm;height:5mm;border-radius:50%;background:{b}"></span><span style="color:#4A5E61">{c}</span></div>' for a, b, c in (('#D6D6D6', '#7FE3D6', 'Silver → Mint'), ('#E3B87E', '#14B8A6', 'Gold → Teal'), ('#9C6B35', '#0E3D42', 'Bronze → Deep'), ('#333', '#022329', 'Graphite → Dark')))}
-    </div>
+  <div style="grid-column:5/13;display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;align-content:center">
+    {''.join(f'<div class="panel" style="padding:4mm"><div class="tn" style="font-size:7pt;color:#0F7C74;font-weight:600">0{i+1}</div><div style="margin:2mm 0">{step_svg(i)}</div><h3>{a}</h3><p style="font-size:6.8pt;margin-top:1mm">{b}</p></div>' for i, (a, b) in enumerate(steps))}
+    <div class="panel" style="grid-column:1/5;padding:5mm;display:flex;align-items:center;justify-content:space-around;background:#022329">
+      {img("icon/svg/WFS_Icon_Premium.svg", "width:44mm")}{img("icon/svg/WFS_Icon_Primary.svg", "width:30mm;background:#F3F5F2;border-radius:50%;padding:2mm")}{img("icon/svg/WFS_Icon_Inverse.svg", "width:30mm")}{img("icon/svg/WFS_Icon_White.svg", "width:30mm")}</div>
   </div>
 </div>''', toc='Logo concept')
 
@@ -295,11 +314,11 @@ page('02 · Logo', 'The icon', f'''
     <div class="eb">The icon</div><h1>Five fields.<br>One aperture.</h1>
     <p style="margin-top:5mm">The icon is an aperture of five interlocking blades. Each blade is a curvilinear surface running from the outer field into the central opening — separate operations resolving into one controlled view.</p>
     <ul class="clean" style="margin-top:5mm">
-      <li><b>B1</b> light blade · Mint &nbsp; <b>B2, B4</b> principal blades · Teal</li>
-      <li><b>B3</b> shadow blade · Deep Teal &nbsp; <b>B5</b> base blade · WFS Dark</li>
-      <li>Outer silhouette: five arcs (layered, not a perfect circle) — keep it.</li>
-      <li>The aperture is off-centre by design (+2.1 %, −2.4 % of D).</li>
-      <li>Blade tips are sharp; never round them.</li>
+      <li>Tonal ramp clockwise: <b>B1</b> Mint · <b>B2</b> Teal · <b>B3</b> Teal 700 · <b>B4</b> Deep Teal · <b>B5</b> WFS Dark.</li>
+      <li>Exact 72° rotational symmetry; outer circle and aperture share one centre.</li>
+      <li>Aperture Ø = 0.38 × icon Ø — it is also the clear-space unit.</li>
+      <li>Blade tips meet the aperture tangentially; never round or cut them.</li>
+      <li>On dark grounds use the Inverse ramp (Mint 100 → Teal 800).</li>
     </ul>
   </div>
   <div style="grid-column:5/13;display:flex;align-items:center;justify-content:center">
@@ -335,28 +354,30 @@ page('02 · Logo', 'Lockups', f'''
 circ = ''
 for c in L.ICON['circles']:
     col = '#14B8A6' if c['role'] == 'outer' else '#0F7C74' if c['role'] == 'aperture' else '#B94E8A'
-    circ += (f'<circle cx="{c["centre"][0]}" cy="{c["centre"][1]}" r="{c["radius"]}" fill="none" stroke="{col}" stroke-width="2.2" stroke-opacity=".75" stroke-dasharray="{"none" if c["role"] in ("outer", "aperture") else "10 8"}"/>'
-             f'<circle cx="{c["centre"][0]}" cy="{c["centre"][1]}" r="6" fill="{col}"/>')
-outline = ''.join(f'<path d="{L.ICON["blades"][b]["paths"]["solid"]}" fill="#F3F5F2" stroke="#022329" stroke-width="3"/>' for b in L.BLADES)
+    circ += (f'<circle cx="{c["centre"][0]}" cy="{c["centre"][1]}" r="{c["radius"]}" fill="none" stroke="{col}" stroke-width="3" stroke-opacity=".8" stroke-dasharray="{"none" if c["role"] in ("outer", "aperture") else "14 10"}"/>'
+             f'<circle cx="{c["centre"][0]}" cy="{c["centre"][1]}" r="9" fill="{col}"/>')
+axes = ''.join(f'<line x1="0" y1="0" x2="{1150 * math.cos(math.radians(IP["rotation_deg"] + 72 * k)):.1f}" y2="{1150 * math.sin(math.radians(IP["rotation_deg"] + 72 * k)):.1f}" stroke="#80918F" stroke-width="2" stroke-dasharray="4 8"/>' for k in range(5))
+outline = ''.join(f'<path d="{L.ICON["blades"][b]["paths"]["solid"]}" fill="#F3F5F2" stroke="#022329" stroke-width="4"/>' for b in L.BLADES)
 page('02 · Logo', 'Construction & geometry', f'''
 <div class="c g12">
   <div style="grid-column:1/5">
-    <div class="eb">Construction</div><h1>Built from circles only</h1>
-    <p style="margin-top:5mm">Every curve of the icon is an arc of a circle: five outer arcs, five aperture arcs and five blade edges, each a biarc (two tangent arcs). The master is defined on a 1 000-unit diameter grid.</p>
+    <div class="eb">Construction</div><h1>Seven circles,<br>one mark</h1>
+    <p style="margin-top:5mm">The icon is fully defined by three numbers on a 1 000-unit grid. The five edge circles are one circle rotated in 72° steps; each is externally tangent to the aperture at a blade tip.</p>
     <table class="spec" style="margin-top:5mm">
-      <tr><th>Element</th><th>Geometry</th><th>Fidelity</th></tr>
-      <tr><td><span style="color:#14B8A6">●</span> Outer arcs</td><td class="tn">5 circles · r 456–535</td><td class="tn">≤ 0.8 %</td></tr>
-      <tr><td><span style="color:#0F7C74">●</span> Aperture arcs</td><td class="tn">5 circles · r 122–272</td><td class="tn">≤ 0.4 %</td></tr>
-      <tr><td><span style="color:#B94E8A">●</span> Blade edges</td><td class="tn">5 biarcs · 10 circles, G1</td><td class="tn">rms 0.2–0.3 %</td></tr>
-      <tr><td>Silhouette</td><td class="tn">IoU vs approved art</td><td class="tn">0.992</td></tr>
-      <tr><td>Aperture</td><td class="tn">{AP_W:.0f} × {AP_H:.0f} units</td><td class="tn">= clear-space unit A</td></tr>
+      <tr><th>Element</th><th>Value</th></tr>
+      <tr><td><span style="color:#14B8A6">●</span> Outer circle R</td><td class="tn">500 (Ø 1 000)</td></tr>
+      <tr><td><span style="color:#0F7C74">●</span> Aperture r</td><td class="tn">{IP["r"]:.0f}</td></tr>
+      <tr><td><span style="color:#B94E8A">●</span> Edge circle ρ</td><td class="tn">{IP["rho"]:.0f} · centre at r + ρ = {IP["r"] + IP["rho"]:.0f}</td></tr>
+      <tr><td>Symmetry</td><td class="tn">5-fold · 72° · first tip at {IP["rotation_deg"]:.0f}°</td></tr>
+      <tr><td>Blade sweep</td><td class="tn">tip → rim ≈ 47° clockwise</td></tr>
+      <tr><td>Watertight</td><td class="tn">blades cover the ring exactly ({L.ICON["coverage"]:.3f})</td></tr>
     </table>
-    <p class="cap" style="margin-top:3mm">Full numeric definition: brand/source/master/icon_geometry.json</p>
+    <p class="cap" style="margin-top:3mm">Numeric master: brand/source/master/icon_geometry.json · generator: brand/source/design_icon.py</p>
   </div>
   <div style="grid-column:5/13;display:flex;align-items:center;justify-content:center;overflow:hidden">
-    <svg viewBox="-760 -640 1520 1280" style="width:170mm;height:143mm"><rect x="-760" y="-640" width="1520" height="1280" fill="#fff"/>
-      <g stroke="#E3E9E7" stroke-width="1.5">{''.join(f'<line x1="{x}" y1="-640" x2="{x}" y2="640"/>' for x in range(-750, 760, 125))}{''.join(f'<line x1="-760" y1="{y}" x2="760" y2="{y}"/>' for y in range(-625, 640, 125))}</g>
-      {outline}{circ}<circle cx="0" cy="0" r="500" fill="none" stroke="#022329" stroke-width="1.5" stroke-dasharray="4 6"/></svg>
+    <svg viewBox="-1180 -1000 2360 2000" style="width:170mm;height:144mm"><rect x="-1180" y="-1000" width="2360" height="2000" fill="#fff"/>
+      <g stroke="#EDF1EF" stroke-width="2">{''.join(f'<line x1="{x}" y1="-1000" x2="{x}" y2="1000"/>' for x in range(-1150, 1160, 125))}{''.join(f'<line x1="-1180" y1="{y}" x2="1180" y2="{y}"/>' for y in range(-1000, 1001, 125))}</g>
+      {axes}{outline}{circ}</svg>
   </div>
 </div>''', toc='Construction & geometry')
 
@@ -443,7 +464,7 @@ page('02 · Logo', 'Premium display version', f'''
 <div class="c g12">
   <div style="grid-column:1/5">
     <div class="eb">Premium display</div><h1>Depth without decoration</h1>
-    <p style="margin-top:5mm">The premium version uses the same master geometry with controlled teal gradients, a key light from the top-right, fine lit edges on the upper blade and in-hue shade on the lower blade at each overlap.</p>
+    <p style="margin-top:5mm">The premium version uses the same master geometry. Each blade carries a gradient from a shaded tip to a lit rim; every overlap casts a soft contact shadow that follows the edge circle exactly; the upper blade catches a fine lit edge; a key light falls from the top-left. All of it is built with gradients — no raster effects.</p>
     <ul class="clean" style="margin-top:5mm"><li><b>Use for:</b> launch visuals, keynote title slides, event screens, store artwork, hero sections.</li>
       <li><b>Never use for:</b> UI chrome, favicons, documents, small sizes (&lt; 64 px / 20 mm), one-colour print.</li>
       <li>No chrome, no glare, no bevel, no drop shadow. No gold or blue.</li></ul>
@@ -644,19 +665,19 @@ page('05 · Graphic language', 'Patterns', f'''
 <p class="cap" style="margin-top:4mm">Editable SVG (dark, light, seamless tiles for 01 and 03) in brand/graphic-system/patterns. Line weight 1–1.5 px at 1920 px width; opacity 10–35 %.</p></div>''', toc='Patterns')
 
 # ================================================================= 27 ICONOGRAPHY
-ic_grid = ''.join(f'<div style="display:flex;flex-direction:column;align-items:center;gap:1.5mm"><div style="width:14mm;height:14mm;border-radius:2mm;background:#fff;border:.2mm solid #E3E9E7;display:flex;align-items:center;justify-content:center">{icon(k, 28, "#022329")}</div><span class="cap">{v}</span></div>' for k, v in C.ICON_LABELS.items())
+ic_grid = ''.join(f'<div style="display:flex;flex-direction:column;align-items:center;gap:1mm"><div style="width:11mm;height:11mm;border-radius:1.8mm;background:#fff;border:.2mm solid #E3E9E7;display:flex;align-items:center;justify-content:center">{icon(k, 22, "#022329")}</div><span class="cap" style="font-size:5.4pt">{k.replace("_", " ")}</span></div>' for k in U.ICON_SET)
 construct = ('<svg viewBox="-2 -2 28 28" style="width:52mm">' + ''.join(f'<line x1="{i}" y1="0" x2="{i}" y2="24" stroke="#E3E9E7" stroke-width=".06"/><line x1="0" y1="{i}" x2="24" y2="{i}" stroke="#E3E9E7" stroke-width=".06"/>' for i in range(25))
              + '<rect x="2" y="2" width="20" height="20" fill="none" stroke="#7FE3D6" stroke-width=".12" stroke-dasharray=".4 .3"/><circle cx="12" cy="12" r="10" fill="none" stroke="#7FE3D6" stroke-width=".12" stroke-dasharray=".4 .3"/>'
              + f'<g fill="none" stroke="#022329" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">{C.ICONS["ledger"]}</g></svg>')
 page('05 · Graphic language', 'Iconography', f'''
 <div class="c g12">
-  <div style="grid-column:1/5"><div class="eb">Product iconography</div><h1>Quiet, precise, outline-first</h1>
+  <div style="grid-column:1/5"><div class="eb">Product iconography</div><h1>Quiet, precise, outline-first</h1><p class="cap" style="margin-top:1mm">52-icon core set · extend using the same grid and stroke.</p>
     <p style="margin-top:4mm">UI icons are functional and deliberately quieter than the brand icon: outline, geometric, one weight. They never reuse the aperture mark or blade shapes.</p>
     <div style="margin-top:4mm">{construct}</div>
     <table class="spec" style="margin-top:2mm"><tr><td>Grid</td><td class="tn">24 × 24 px · 2 px padding · live area 20 px</td></tr><tr><td>Stroke</td><td class="tn">1.5 px · round caps & joins</td></tr>
       <tr><td>Corners</td><td class="tn">1–2 px radius on rectangles</td></tr><tr><td>Sizes</td><td class="tn">16 · 20 · 24 px (stroke 1.5 at all)</td></tr><tr><td>Colour</td><td>Slate 400 idle · Teal 700 active · text colour in content</td></tr></table>
   </div>
-  <div style="grid-column:6/13"><div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4mm 3mm;margin-top:10mm">{ic_grid}</div>
+  <div style="grid-column:6/13"><div style="display:grid;grid-template-columns:repeat(9,1fr);gap:2.6mm 2mm;margin-top:2mm">{ic_grid}</div>
     <p class="cap" style="margin-top:5mm">No coins, dollar signs, piggy banks, bank columns, trading candles or AI sparkles — actions and objects only (receive, pay, approve, reconcile, report).</p></div>
 </div>''', toc='Iconography')
 
@@ -705,6 +726,22 @@ page('06 · Motion', 'Motion language', f'''
   <p class="cap" style="margin-top:2mm">Reference prototype: brand/motion/WFS_Logo_Reveal.html (SVG + CSS, no dependencies).</p></div>
 </div></div>''', 'dark', toc='Motion')
 
+# ================================================================= UI SYSTEM (new chapter)
+def kit_page(title, h1, body_html, intro, theme='white'):
+    page('07 · UI system', title, f'''<div class="c"><div class="row" style="justify-content:space-between;align-items:flex-end"><div><div class="eb">UI system</div><h1>{h1}</h1></div>
+<p style="width:125mm">{intro}</p></div><div style="margin-top:5mm;display:flex;justify-content:center">{body_html}</div></div>''', theme, toc=title)
+kit_page('Buttons', 'Buttons & actions', mock(U.ui_buttons('light'), 1400, 560, 240, radius=2.5),
+         'One Primary Teal action per view. Secondary for alternatives, Tertiary for low emphasis, Dark for confirmations on light surfaces, Danger only for destructive steps. Radius 10 px, heights 32 · 40 · 48, focus ring 2 px Teal with 2 px offset.')
+kit_page('Forms & controls', 'Forms, selection & navigation', mock(U.ui_forms('light'), 1400, 470, 240, radius=2.5),
+         'Inputs are 42 px with a 1.5 px border; focus adds a Mint 100 halo, errors use Negative with a message — never colour alone. Amounts and codes use tabular figures. Status chips always pair colour with a label.')
+kit_page('Feedback', 'Feedback, dialogs & states', mock(U.ui_feedback('light'), 1400, 480, 240, radius=2.5),
+         'Alerts carry an icon, a title and one sentence. Toasts confirm and offer Undo. Dialogs state the consequence and the amount. Loading uses skeletons and the rotating one-colour icon; empty states are calm and actionable.')
+kit_page('Data tables', 'Data tables', mock(U.ui_table('light'), 1400, 520, 240, radius=2.5),
+         'Tables are the core surface of WFS: 48 px rows, uppercase 11.5 px headers, right-aligned tabular amounts, negatives in parentheses, references in Teal 700, status as labelled chips, bulk selection tinted Mint 100.')
+page('07 · UI system', 'UI system — dark', f'''<div class="c"><div class="eb">UI system</div><h1>Dark theme components</h1>
+<div class="row" style="margin-top:5mm;gap:5mm"><div>{mock(U.ui_buttons('dark'), 1400, 560, 132, radius=2)}</div><div>{mock(U.ui_forms('dark'), 1400, 470, 132, radius=2)}</div></div>
+<div class="row" style="margin-top:5mm;gap:5mm"><div>{mock(U.ui_feedback('dark'), 1400, 480, 132, radius=2)}</div><div>{mock(U.ui_table('dark'), 1400, 520, 132, radius=2)}</div></div></div>''', 'dark', toc='UI system — dark')
+
 # ================================================================= 30 APP ICON
 def components(theme):
     t = C.TH[theme]
@@ -717,7 +754,7 @@ def components(theme):
 
 def squircle(src, size_mm, radius='22.4%'):
     return f'<img src="{A}/{src}" style="width:{size_mm}mm;height:{size_mm}mm;border-radius:{radius};display:block;box-shadow:0 .6mm 2mm rgba(2,35,41,.25)">'
-page('07 · Applications', 'App icon', f'''
+page('08 · Applications', 'App icon', f'''
 <div class="c g12">
   <div style="grid-column:1/5"><div class="eb">App icon</div><h1>Deep field, luminous aperture</h1>
     <p style="margin-top:4mm">The app icon places the inverse icon on the Deep gradient with a soft ambient field. The master is a full-bleed 1024 px square — platforms apply their own masks; never bake corners into production files.</p>
@@ -738,13 +775,24 @@ page('07 · Applications', 'App icon', f'''
 </div>''', 'white', toc='App icon')
 
 # ================================================================= 31 DESKTOP PRODUCT
-page('07 · Applications', 'Digital product — executive dashboard', f'''
+page('08 · Applications', 'Digital product — executive dashboard', f'''
 <div class="c"><div class="row" style="justify-content:space-between;align-items:flex-end"><div><div class="eb">Digital product</div><h1>The product is the hero</h1></div>
 <p style="width:120mm">Executive financial dashboard: multi-entity scope, tabular figures, one teal action, data palette in fixed order, WFS Dark sidebar mark. The brand is present through restraint.</p></div>
 <div style="margin-top:6mm;display:flex;justify-content:center">{mock(C.dashboard("light"), 1440, 900, 238, radius=2.5)}</div></div>''', toc='Digital product')
 
+# ================================================================= PRODUCT SCREENS (new)
+def screen_page(title, h1, html_, intro):
+    page('08 · Applications', title, f'''<div class="c"><div class="row" style="justify-content:space-between;align-items:flex-end"><div><div class="eb">Product screens</div><h1>{h1}</h1></div>
+<p style="width:120mm">{intro}</p></div><div style="margin-top:5mm;display:flex;justify-content:center">{mock(html_, 1440, 900, 232, radius=2.5)}</div></div>''', toc=title)
+screen_page('Screen — Approvals', 'Approvals with control', U.screen_approvals('light'), 'Four-eyes approvals: queue on the left, the decision on the right with the full approval chain, amount in tabular figures and one Teal action.')
+screen_page('Screen — Treasury', 'Treasury in one view', U.screen_treasury('dark'), 'Consolidated cash across banks and currencies, exposure bar in the data palette, live FX, bank connections — shown in the dark theme.')
+page('08 · Applications', 'Screens — reports & mobile', f'''<div class="c"><div class="eb">Product screens</div><h1>Reports & mobile</h1>
+<div class="row" style="margin-top:5mm;gap:5mm;align-items:flex-start"><div>{mock(U.screen_reports('light'), 1440, 900, 158, radius=2)}<div class="cap" style="margin-top:2mm">Report library — cards with icon, cadence and trend.</div></div>
+<div>{mock(C.phone(U.mobile_approvals()), 418, 872, 44, radius=7, shadow=False)}<div class="cap" style="margin-top:2mm">Mobile approvals</div></div>
+<div>{mock(C.phone(U.push_notification()), 418, 872, 44, radius=7, shadow=False)}<div class="cap" style="margin-top:2mm">Push notification</div></div></div></div>''', toc='Screens — reports & mobile')
+
 # ================================================================= 32 LOGIN + MOBILE
-page('07 · Applications', 'Login, launch & mobile', f'''
+page('08 · Applications', 'Login, launch & mobile', f'''
 <div class="c"><div class="eb">Launch & access</div><h1>First impressions</h1>
 <div class="row" style="margin-top:6mm;gap:6mm;align-items:flex-start">
   <div>{mock(C.login(), 1440, 900, 166, radius=2)}<div class="cap" style="margin-top:2mm">Web sign-in: convergence field, positioning line, off-white form panel.</div></div>
@@ -753,7 +801,7 @@ page('07 · Applications', 'Login, launch & mobile', f'''
 </div></div>''', toc='Login, launch & mobile')
 
 # ================================================================= 33 LIGHT / DARK
-page('07 · Applications', 'Light & dark usage', f'''
+page('08 · Applications', 'Light & dark usage', f'''
 <div class="c"><div class="eb">Light & dark</div><h1>Two modes, one system</h1>
 <div class="row" style="margin-top:5mm;gap:5mm">
   <div style="flex:1">{mock(C.dashboard("light"), 1440, 900, 132, radius=2)}<h3 style="margin-top:2.5mm">Light mode</h3><p style="font-size:7pt">Off-White ground, white surfaces, WFS Dark text, Teal 700 for text accents, Primary logo.</p></div>
@@ -761,8 +809,19 @@ page('07 · Applications', 'Light & dark usage', f'''
 </div>
 <div class="row" style="margin-top:4mm;gap:5mm">{components("light")}{components("dark")}</div></div>''', toc='Light & dark usage')
 
+# ================================================================= TECH USES (new)
+page('08 · Applications', 'Developer portal', f'''<div class="c"><div class="row" style="justify-content:space-between;align-items:flex-end"><div><div class="eb">Technical applications</div><h1>Developer portal & API</h1></div>
+<p style="width:125mm">Docs use the light theme with a WFS Dark code panel. Code is set in the system monospace; keys in Mint, values in Warning amber. Resource names, amounts and ISO codes are documented exactly as the API returns them.</p></div>
+<div style="margin-top:5mm;display:flex;justify-content:center">{mock(U.dev_portal(), 1440, 900, 232, radius=2.5)}</div></div>''', toc='Developer portal')
+page('08 · Applications', 'System communications', f'''<div class="c"><div class="eb">Technical applications</div><h1>System communications</h1>
+<div class="row" style="margin-top:5mm;gap:5mm;align-items:flex-start">
+  <div>{mock(U.email_notification(), 720, 860, 78, radius=2)}<div class="cap" style="margin-top:2mm">Transactional email</div></div>
+  <div style="flex:1;display:flex;flex-direction:column;gap:5mm">{mock(U.status_page(), 1200, 760, 176, radius=2)}<div class="cap">Status page</div>
+  <div class="row" style="gap:5mm">{mock(U.empty_404(), 1200, 760, 86, radius=2)}<p class="cap" style="flex:1">Error pages keep the brand calm and helpful: Deep ground, the Convergence pattern, a plain sentence and a clear way back.</p></div></div>
+</div></div>''', 'white', toc='System communications')
+
 # ================================================================= 34 REPORTS
-page('07 · Applications', 'Reports & documents', f'''
+page('08 · Applications', 'Reports & documents', f'''
 <div class="c g12">
   <div style="grid-column:1/4"><div class="eb">Reports & documents</div><h1>Authority on paper</h1>
     <p style="margin-top:4mm">Covers use the Deep ground with the Unified Field; inside pages are white with a quiet header, tabular statements and a controlled footer carrying generation metadata.</p>
@@ -773,7 +832,7 @@ page('07 · Applications', 'Reports & documents', f'''
 </div>''', 'white', toc='Reports & documents')
 
 # ================================================================= 35 MARKETING I
-page('07 · Applications', 'Marketing — web & presentation', f'''
+page('08 · Applications', 'Marketing — web & presentation', f'''
 <div class="c"><div class="eb">Marketing applications</div><h1>Web hero & presentation</h1>
 <div class="row" style="margin-top:5mm;gap:5mm">
   <div>{mock(C.website(), 1440, 900, 165, radius=2)}<h3 style="margin-top:2.5mm">Website hero</h3><p style="font-size:7pt">Positioning headline, one primary CTA, product UI as proof.</p></div>
@@ -781,7 +840,7 @@ page('07 · Applications', 'Marketing — web & presentation', f'''
 </div></div>''', toc='Marketing — web & presentation')
 
 # ================================================================= 36 MARKETING II
-page('07 · Applications', 'Marketing — social, announcement, event', f'''
+page('08 · Applications', 'Marketing — social, announcement, event', f'''
 <div class="c"><div class="eb">Marketing applications</div><h1>Launch, social & event</h1>
 <div class="row" style="margin-top:5mm;gap:5mm;align-items:flex-start">
   <div>{mock(C.social(), 1080, 1080, 78, radius=2)}<h3 style="margin-top:2mm">Social / launch 1:1</h3></div>
@@ -793,8 +852,35 @@ page('07 · Applications', 'Marketing — social, announcement, event', f'''
   <div style="flex:1">{mock(C.email_header(), 1200, 400, 109, radius=1.5)}<h3 style="margin-top:2mm">Product update email header 3:1</h3></div>
 </div></div>''', toc='Marketing — social, announcement, event')
 
+# ================================================================= SOCIAL MEDIA (new chapter)
+feed = [U.sm_quote(), U.sm_stat(), U.sm_carousel(0), U.sm_carousel(3), U.sm_avatar(1080, 1080), U.sm_carousel(1)]
+feed_html = ''.join(mock(f_, 1080, 1080 if i in (0, 1, 4) else 1350, 41, radius=0, shadow=False) if i in (0, 1, 4) else f'<div style="width:41mm;height:41mm;overflow:hidden">{mock(f_, 1080, 1350, 41, radius=0, shadow=False)}</div>' for i, f_ in enumerate(feed))
+page('09 · Social media', 'Social media system', f'''<div class="c g12">
+  <div style="grid-column:1/6"><div class="eb">Social media</div><h1>One feed,<br>one field</h1>
+    <p style="margin-top:4mm">Every post is built from the same four parts: a ground (Deep or Off-White), one graphic element from the icon, one message, the lockup. Alternate dark and light to give the grid rhythm.</p>
+    <table class="spec" style="margin-top:4mm"><tr><th>Pillar</th><th>Content</th><th>Ground</th></tr>
+      <tr><td>Product</td><td>launches, features, screens</td><td>Deep + Convergence</td></tr><tr><td>Proof</td><td>numbers, customer quotes</td><td>Off-White + Aperture crop</td></tr>
+      <tr><td>Perspective</td><td>finance leadership insight</td><td>Deep + Unified Field</td></tr><tr><td>Company</td><td>events, hiring, partners</td><td>Either · endorsement allowed</td></tr></table>
+    <table class="spec" style="margin-top:4mm"><tr><th>Rule</th><th>Value</th></tr><tr><td>Margins / safe zone</td><td class="tn">7.8 % of width (84 px on 1080)</td></tr>
+      <tr><td>Headline</td><td class="tn">Instrument Sans SemiBold 66–100 px · −0.035 em</td></tr><tr><td>Label</td><td class="tn">SemiBold 22–26 px caps · +0.16 em · Mint / Teal 700</td></tr>
+      <tr><td>Lockup</td><td class="tn">bottom-left, 32–44 px high</td></tr><tr><td>Copy</td><td>≤ 12 words on image; details go in the caption</td></tr></table></div>
+  <div style="grid-column:7/13;display:flex;justify-content:center;align-items:center"><div style="display:grid;grid-template-columns:repeat(3,41mm);gap:1.2mm;padding:3mm;background:#fff;border-radius:3mm;box-shadow:0 1mm 4mm rgba(2,35,41,.15)">{feed_html}</div></div>
+</div>''', toc='Social media system')
+page('09 · Social media', 'Social templates — posts & stories', f'''<div class="c"><div class="eb">Social media</div><h1>Carousel & story</h1>
+<div class="row" style="margin-top:5mm;gap:3.5mm;align-items:flex-start">
+{''.join(f'<div>{mock(U.sm_carousel(i), 1080, 1350, 52, radius=1.5)}<div class="cap" style="margin-top:1.5mm">Carousel {i+1}/4 · 1080×1350</div></div>' for i in range(4))}
+<div>{mock(U.sm_story(), 1080, 1920, 36.5, radius=1.5)}<div class="cap" style="margin-top:1.5mm">Story · 1080×1920</div></div></div>
+<p class="cap" style="margin-top:4mm">Carousels open and close on Deep grounds with a pattern; middle slides are Off-White with product proof. Keep the top 14 % and bottom 20 % of stories free of text (platform UI).</p></div>''', toc='Social templates — posts & stories')
+page('09 · Social media', 'Social templates — channels', f'''<div class="c"><div class="eb">Social media</div><h1>Channel formats</h1>
+<div class="row" style="margin-top:5mm;gap:5mm;align-items:flex-start">
+  <div style="display:flex;flex-direction:column;gap:2mm">{mock(U.sm_linkedin(), 1200, 627, 118, radius=1.5)}<div class="cap">LinkedIn link post · 1200×627</div>{mock(U.sm_youtube(), 1280, 720, 118, radius=1.5)}<div class="cap">YouTube thumbnail · 1280×720</div></div>
+  <div style="flex:1;display:flex;flex-direction:column;gap:2mm">{mock(U.sm_x_header(), 1500, 500, 144, radius=1.5)}<div class="cap">X / Twitter header · 1500×500</div>
+    {mock(C.banner(), 1584, 396, 144, radius=1.5)}<div class="cap">LinkedIn cover · 1584×396</div>
+    <div class="row" style="gap:5mm;align-items:center;margin-top:2mm">{mock(U.sm_avatar(), 800, 800, 30, radius=15, shadow=False)}{mock(U.sm_avatar(theme='light'), 800, 800, 30, radius=15, shadow=False)}<p class="cap" style="flex:1">Profile avatars: icon only, centred at 60 % inside the circular crop; Premium on Deep (default) or Primary on Off-White.</p></div></div>
+</div></div>''', toc='Social templates — channels')
+
 # ================================================================= 37 ENDORSEMENT
-page('08 · Architecture', 'WUSOOL Tech endorsement', f'''
+page('10 · Architecture', 'WUSOOL Tech endorsement', f'''
 <div class="c g12">
   <div style="grid-column:1/5"><div class="eb">Brand architecture</div><h1>A WUSOOL Tech Product</h1>
     <p style="margin-top:4mm">WFS is an independent product brand created by WUSOOL Tech. The endorsement adds provenance in corporate, investor and partner contexts; it is never part of the primary logo and never borrows WUSOOL Investment styling.</p>
@@ -812,7 +898,7 @@ page('08 · Architecture', 'WUSOOL Tech endorsement', f'''
 # ================================================================= 38 VOICE
 msgs = [('One financial view.', 'رؤية مالية واحدة.'), ('One financial truth.', 'حقيقة مالية واحدة.'), ('Global by design.', 'عالمي بالتصميم.'),
         ('Powerful on its own. Connected when you need it.', 'قوي بذاته. ومتصل عندما تحتاج.'), ('One financial system. Every operation in view.', 'نظام مالي واحد. كل عملية أمامك بوضوح.')]
-page('08 · Architecture', 'Brand voice & messaging', f'''
+page('10 · Architecture', 'Brand voice & messaging', f'''
 <div class="c g12">
   <div style="grid-column:1/6"><div class="eb">Positioning statement</div>
     <p class="lead" style="font-size:16pt;line-height:1.32;margin-top:3mm;letter-spacing:-.012em">WFS is a global financial operating system designed to give modern organisations a unified view and controlled execution of their financial operations.</p>
@@ -842,10 +928,10 @@ tree = '''brand/
 TREE = [('guidelines/', 'WFS_Brand_Guidelines_2026.pdf · source/ (HTML + build) · preview/'), ('logo/', 'svg · pdf · png · ai (README) · preview'),
         ('icon/', 'svg · pdf · png · app · favicon'), ('wordmark/', 'svg · pdf · png · ai (README)'), ('graphic-system/', 'patterns · fields · gradients · backgrounds · preview'),
         ('color/', 'tokens (CSS · SCSS · JSON) · swatches (ASE · GPL)'), ('typography/', 'README.md — fonts, weights, scale, numerals'), ('motion/', 'WFS_Logo_Reveal.html · motion tokens'),
-        ('templates/', 'presentation · report · social · email signature (HTML)'), ('source/', 'vector masters · build scripts · approved references'), ('WFS_BRAND_ASSET_INDEX.md', 'every file: purpose · format · variant · colour · background')]
+        ('templates/', 'presentation · report · social (15 formats) · email · signature (HTML, PDF, PNG)'), ('source/', 'vector masters · build scripts · approved references'), ('WFS_BRAND_ASSET_INDEX.md', 'every file: purpose · format · variant · colour · background')]
 USE = [('Website, product UI', 'SVG'), ('Word, PowerPoint, Google', 'PNG 2048 · or PDF'), ('Professional print', 'PDF (vector) · proof colour'), ('Social avatar', 'Icon PNG on WFS Dark / App icon'),
        ('Favicon / PWA', 'icon/favicon set + head-snippet.html'), ('Video, keynote, events', 'Premium PNG 4096 · SVG'), ('Signage, embroidery', 'One-colour PDF / SVG')]
-page('09 · Assets', 'Asset library', f'''
+page('11 · Assets', 'Asset library', f'''
 <div class="c g12">
   <div style="grid-column:1/6"><div class="eb">Asset library</div><h1>Files & naming</h1>
     <table class="spec" style="margin-top:5mm">{"".join(f'<tr><td style="width:34mm;font-weight:600;color:#022329">{a}</td><td>{b}</td></tr>' for a, b in TREE)}</table></div>
@@ -865,7 +951,7 @@ page('09 · Assets', 'Asset library', f'''
 princ = [('Unity', 'One field, one truth. Design every touchpoint as part of the same system.'), ('Control', 'Measured geometry, measured words. Nothing accidental.'),
          ('Clarity', 'Structure first. Remove before adding.'), ('Precision', 'Tabular numbers, exact alignment, honest data.'),
          ('Global scale', 'Neutral in geography, fluent in every market.'), ('Intelligence', 'Insight that is earned, never decorative.')]
-page('09 · Assets', 'Brand principles', f'''
+page('11 · Assets', 'Brand principles', f'''
 <img src="{A}/graphic-system/fields/WFS_Overlay_Convergence_OnDark.svg" style="position:absolute;left:110mm;top:-10mm;width:300mm;opacity:1">
 <img src="{A}/icon/svg/WFS_Icon_Premium.svg" style="position:absolute;left:212mm;top:58mm;width:112mm">
 <div class="c"><div class="eb">Final brand principles</div><h1 class="xl" style="width:160mm">Every operation in view.</h1>
@@ -896,6 +982,7 @@ GLYPHS = {
     '≤': _g('0 0 10 12', f'<path {_st} d="M8.5 1.5L1.5 5l7 3.5M1.5 11h7"/>', '.62em', '.78em', '-.08em'),
     '≥': _g('0 0 10 12', f'<path {_st} d="M1.5 1.5L8.5 5l-7 3.5M1.5 11h7"/>', '.62em', '.78em', '-.08em'),
     '≈': _g('0 0 12 10', f'<path {_st} d="M1 3.5c2-2 3.5 0 5 0s3-2 5 0M1 7.5c2-2 3.5 0 5 0s3-2 5 0"/>', '.72em', '.62em', '.02em'),
+    'ρ': _g('0 0 10 12', f'<path {_st} d="M2.6 11.5V6.2a3.1 3.1 0 1 1 3.1 3.1H2.6"/>', '.55em', '.72em', '-.2em'),
     'Δ': _g('0 0 10 10', f'<path {_st} d="M5 1.2L9 8.8H1z"/>', '.62em', '.62em', '0'),
 }
 def glyphs(h):

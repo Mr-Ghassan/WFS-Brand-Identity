@@ -7,7 +7,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 export WFS_FONT_DIR="${WFS_FONT_DIR:-$HOME/.wfs-fonts}"
 [ -d node_modules ] || npm install --silent
-python3 vectorize_icon.py          # approved icon  -> master/icon_geometry.json (all-circle construction)
+python3 design_icon.py            # original parametric icon -> master/icon_geometry.json (5-fold, pure arcs)
 python3 vectorize_wordmark.py      # approved wordmark -> master/wordmark_geometry.json
 python3 build_logos.py             # icon / wordmark / lockup matrix: SVG + PDF + PNG
 python3 build_app_icons.py         # app icons, adaptive layers, favicons, manifest

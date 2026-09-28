@@ -22,6 +22,10 @@ The identified approved Arabic typeface is **Myriad Arabic** (the name given as 
 - Arabic specimens in the guidelines PDF are rendered with a **clearly labelled proxy** (Noto Sans Arabic, OFL) and a visible note on the Arabic pages.
 - To finalise: copy the Myriad Arabic font files into `$WFS_FONT_DIR`, then run `source/build_all.sh`. The bilingual lockup is produced and the guidelines switch to Myriad Arabic automatically.
 
+## Code
+
+Code samples (developer portal, API docs) use **IBM Plex Mono** (SIL OFL 1.1), Regular and Medium.
+
 ## Hierarchy (digital, px)
 
 | Style | Size / line | Weight | Tracking |

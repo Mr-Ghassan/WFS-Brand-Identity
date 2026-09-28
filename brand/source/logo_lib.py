@@ -1,6 +1,6 @@
 """WFS logo library: builds clean SVG markup for every icon / wordmark / lockup
 variant from the vector masters (master/*.json) and brand_config colours."""
-import json, os, io, re, glob
+import json, os, io, re, glob, math
 import numpy as np
 import brand_config as B
 
@@ -86,44 +86,66 @@ def _blade_centroids():
     return res
 
 PREMIUM_TONES = {
-    # (outer/lit tone, inner/shaded tone) per blade — WFS palette only
-    'dark':  {'B1': ('#D9F7F2', '#57C9BA'), 'B2': ('#8AE8DC', '#0F9E8F'), 'B3': ('#138A80', '#0C4447'),
-              'B4': ('#6ADDCE', '#0F7C74'), 'B5': ('#1C7473', '#07343B')},
-    'light': {'B1': ('#A9EDE3', '#43BEAE'), 'B2': ('#5FD9CA', '#0F8F82'), 'B3': ('#0F6E69', '#062E33'),
-              'B4': ('#3FCDBC', '#0F7C74'), 'B5': ('#10474C', '#021A1F')},
+    # (lit outer tone, shaded tip tone) per blade — WFS palette only; tonal ramp light -> dark around the ring
+    'dark':  {'B1': ('#F3FFFC', '#8FE6DA'), 'B2': ('#9BEEE3', '#12A594'), 'B3': ('#2CC7B4', '#0E6E68'),
+              'B4': ('#17938A', '#0B3F44'), 'B5': ('#146A69', '#06282E')},
+    'light': {'B1': ('#C9F5EE', '#5ED3C4'), 'B2': ('#5FDACB', '#0F8F82'), 'B3': ('#19A596', '#0B5E5A'),
+              'B4': ('#136A69', '#082F34'), 'B5': ('#0B3A40', '#01161A')},
 }
 
+def _inside_edge(key, b):
+    """True if blade b lies inside the edge circle `key`."""
+    e = ICON['edges'][key]; c = e['centre']; cx, cy = _blade_centroids()[b]
+    return (cx - c[0]) ** 2 + (cy - c[1]) ** 2 < e['radius'] ** 2
+
 def icon_premium(on='dark', uid='p'):
-    """Premium display icon: same geometry, controlled gradients, layered edge light."""
-    cen = _blade_centroids()
-    tones = PREMIUM_TONES[on]
-    defs = []; body = []
+    """Premium display icon: same master geometry; smart gradients, soft contact shadows, lit edges.
+    Uses gradients only (no filters) so it renders identically in browsers, PDF and PNG."""
+    cen = _blade_centroids(); tones = PREMIUM_TONES[on]
+    defs, body = [], []
+    R = ICON['parameters']['R']; r = ICON['parameters']['r']
     for b in BLADES:
-        cx, cy = cen[b]; r = np.hypot(cx, cy); ux, uy = cx / r, cy / r
-        # outer (lit) -> inner along the blade's radial direction, biased toward the top-right light
-        x1, y1 = ux * 520 + 120, uy * 520 - 120
-        x2, y2 = ux * 180, uy * 180
+        cx, cy = cen[b]; n = math.hypot(cx, cy); ux, uy = cx / n, cy / n
         lit, shade = tones[b]
+        # tip (near aperture, shaded) -> outer rim (lit), skewed toward a top-left key light
+        x1, y1 = ux * (r * 0.9), uy * (r * 0.9)
+        x2, y2 = ux * R * 1.02 - 90, uy * R * 1.02 - 120
         defs.append(f'<linearGradient id="{uid}g{b}" gradientUnits="userSpaceOnUse" x1="{f(x1)}" y1="{f(y1)}" x2="{f(x2)}" y2="{f(y2)}">'
-                    f'<stop offset="0" stop-color="{lit}"/><stop offset="1" stop-color="{shade}"/></linearGradient>')
+                    f'<stop offset="0" stop-color="{shade}"/><stop offset="0.62" stop-color="{mix(shade, lit, .72)}"/><stop offset="1" stop-color="{lit}"/></linearGradient>')
         defs.append(f'<clipPath id="{uid}c{b}"><path d="{ICON["blades"][b]["paths"]["solid"]}"/></clipPath>')
         body.append(f'<path id="blade-{b[1]}" fill="url(#{uid}g{b})" d="{ICON["blades"][b]["paths"]["solid"]}"/>')
-    # layered light: shade falls on the lower blade, a fine highlight runs along the upper blade's edge
-    shade_col = '#06363A' if on == 'dark' else '#0E3D42'
+    shade_col = '#021A1F' if on == 'dark' else '#022329'
     for key, e in ICON['edges'].items():
-        a_, b_ = key.split('|'); upper = ICON['stacking'][key]; lower = b_ if upper == a_ else a_
-        body.append(f'<g clip-path="url(#{uid}c{lower})" fill="none" stroke="{shade_col}" stroke-linecap="round">'
-                    f'<path d="{e["d"]}" stroke-width="60" stroke-opacity="0.08"/>'
-                    f'<path d="{e["d"]}" stroke-width="48" stroke-opacity="0.10"/>'
-                    f'<path d="{e["d"]}" stroke-width="20" stroke-opacity="0.14"/></g>')
-        body.append(f'<g clip-path="url(#{uid}c{upper})" fill="none" stroke="#EFFFFC" stroke-linecap="round">'
-                    f'<path d="{e["d"]}" stroke-width="16" stroke-opacity="0.10"/>'
-                    f'<path d="{e["d"]}" stroke-width="5" stroke-opacity="{0.60 if on == "dark" else 0.45}"/></g>')
-    # soft key light from the top-right
-    defs.append(f'<radialGradient id="{uid}key" gradientUnits="userSpaceOnUse" cx="260" cy="-300" r="620">'
-                f'<stop offset="0" stop-color="#FFFFFF" stop-opacity="0.22"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>')
+        a_, b_ = key.split('|'); upper = ICON['stacking'][key]; lower = a_ if upper == b_ else b_
+        c = e['centre']; rad = e['radius']; w = 70.0
+        if _inside_edge(key, lower):     # shadow fades inward from the edge
+            stops = f'<stop offset="{(rad - w) / rad:.4f}" stop-color="{shade_col}" stop-opacity="0"/><stop offset="1" stop-color="{shade_col}" stop-opacity="0.42"/>'
+            rr = rad
+        else:                            # shadow fades outward from the edge
+            rr = rad + w
+            stops = f'<stop offset="{rad / rr:.4f}" stop-color="{shade_col}" stop-opacity="0.42"/><stop offset="1" stop-color="{shade_col}" stop-opacity="0"/>'
+        gid = f'{uid}s{a_}{b_}'
+        defs.append(f'<radialGradient id="{gid}" gradientUnits="userSpaceOnUse" cx="{f(c[0])}" cy="{f(c[1])}" r="{f(rr)}">{stops}</radialGradient>')
+        body.append(f'<rect clip-path="url(#{uid}c{lower})" x="-600" y="-600" width="1200" height="1200" fill="url(#{gid})"/>')
+        # lit edge on the upper blade: bright near the rim, fading toward the tip
+        lg = f'{uid}l{a_}{b_}'
+        defs.append(f'<linearGradient id="{lg}" gradientUnits="userSpaceOnUse" x1="{f(e["p0"][0])}" y1="{f(e["p0"][1])}" x2="{f(e["p1"][0])}" y2="{f(e["p1"][1])}">'
+                    f'<stop offset="0" stop-color="#FFFFFF" stop-opacity="0.05"/><stop offset="0.7" stop-color="#FFFFFF" stop-opacity="{0.75 if on == "dark" else 0.6}"/>'
+                    f'<stop offset="1" stop-color="#FFFFFF" stop-opacity="0.9"/></linearGradient>')
+        body.append(f'<g clip-path="url(#{uid}c{upper})" fill="none" stroke="url(#{lg})" stroke-linecap="round">'
+                    f'<path d="{e["d"]}" stroke-width="5"/><path d="{e["d"]}" stroke-width="18" stroke-opacity="0.18"/></g>')
+    # aperture depth: inner ring darkens slightly toward the opening
+    defs.append(f'<radialGradient id="{uid}ap" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="{f(r + 120)}">'
+                f'<stop offset="{r / (r + 120):.4f}" stop-color="{shade_col}" stop-opacity="0.35"/><stop offset="1" stop-color="{shade_col}" stop-opacity="0"/></radialGradient>')
     defs.append(f'<clipPath id="{uid}all">' + ''.join(f'<path d="{ICON["blades"][b]["paths"]["solid"]}"/>' for b in BLADES) + '</clipPath>')
+    body.append(f'<rect clip-path="url(#{uid}all)" x="-600" y="-600" width="1200" height="1200" fill="url(#{uid}ap)"/>')
+    # soft key light from the top-left + fine rim light on the outer circle
+    defs.append(f'<radialGradient id="{uid}key" gradientUnits="userSpaceOnUse" cx="-240" cy="-300" r="640">'
+                f'<stop offset="0" stop-color="#FFFFFF" stop-opacity="0.22"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>')
     body.append(f'<rect clip-path="url(#{uid}all)" x="-600" y="-600" width="1200" height="1200" fill="url(#{uid}key)"/>')
+    defs.append(f'<linearGradient id="{uid}rim" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".55"/>'
+                f'<stop offset=".5" stop-color="#FFFFFF" stop-opacity=".06"/><stop offset="1" stop-color="#FFFFFF" stop-opacity=".25"/></linearGradient>')
+    body.append(f'<g clip-path="url(#{uid}all)"><circle r="{f(R - 2)}" fill="none" stroke="url(#{uid}rim)" stroke-width="4"/></g>')
     return f'<defs>{"".join(defs)}</defs>' + ''.join(body)
 
 # ----------------------------------------------------------------- wordmark markup

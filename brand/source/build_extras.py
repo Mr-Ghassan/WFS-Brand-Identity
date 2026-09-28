@@ -111,7 +111,7 @@ The identified approved Arabic typeface is **Myriad Arabic** (the name given as 
 - Arabic specimens in the guidelines PDF are rendered with a **clearly labelled proxy** (Noto Sans Arabic, OFL) and a visible note on the Arabic pages.
 - To finalise: copy the Myriad Arabic font files into `$WFS_FONT_DIR`, then run `source/build_all.sh`. The bilingual lockup is produced and the guidelines switch to Myriad Arabic automatically.
 
-## Hierarchy (digital, px)
+## Code\n\nCode samples (developer portal, API docs) use **IBM Plex Mono** (SIL OFL 1.1), Regular and Medium.\n\n## Hierarchy (digital, px)
 
 | Style | Size / line | Weight | Tracking |
 |---|---|---|---|
@@ -227,16 +227,18 @@ Loading state: the one-colour icon rotates 360° every 2.4 s, linear. `prefers-r
 def templates():
     sys.path.insert(0, os.path.join(ROOT, 'guidelines', 'source'))
     import gl_components as C
+    import gl_ui as U
     head = ('<meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">'
             '<style>:root{--en:"Instrument Sans",system-ui,sans-serif;--ar:"Myriad Arabic",sans-serif}*{box-sizing:border-box;margin:0;padding:0}'
             'body{font-family:var(--en);background:#555}.tn{font-variant-numeric:tabular-nums lining-nums}.page{break-after:page;overflow:hidden}</style>')
     items = [
         ('presentation', 'WFS_Presentation_Template', '1920px', '1080px', [C.slide(), C.slide_content()], 'Presentation (16:9): title + content slide'),
         ('report', 'WFS_Report_Template', '210mm', '297mm', [C.report_cover(), C.report_page()], 'A4 report: cover + statement page with header/footer'),
-        ('social', 'WFS_Social_Launch_1080', '1080px', '1080px', [C.social()], 'Social / launch post 1:1'),
+        ('social', 'WFS_Social_Launch_1080x1080', '1080px', '1080px', [C.social()], 'Social / launch post 1:1'),
         ('social', 'WFS_Social_Announcement_1200x1500', '1200px', '1500px', [C.announcement()], 'Product announcement 4:5'),
-        ('social', 'WFS_Social_Cover_1584x396', '1584px', '396px', [C.banner()], 'LinkedIn / social cover 4:1'),
-    ]
+        ('social', 'WFS_Social_LinkedIn_Cover_1584x396', '1584px', '396px', [C.banner()], 'LinkedIn cover 4:1'),
+        ('email', 'WFS_Email_Notification_720', '720px', '860px', [U.email_notification()], 'Transactional email notification'),
+    ] + [('social', n, f'{w_}px', f'{h_}px', [fn()], purpose) for purpose, n, w_, h_, fn in U.SOCIAL]
     render = os.path.join(ROOT, 'source', 'render.mjs')
     for folder, name, wd, ht, pages, purpose in items:
         scale = ''
@@ -281,7 +283,7 @@ Edit text directly in the HTML (fonts load from Google Fonts; Arabic from your A
 |---|---|---|
 | presentation | WFS_Presentation_Template | 1920 × 1080 (16:9), title + content |
 | report | WFS_Report_Template | A4 portrait, cover + statement page |
-| social | WFS_Social_Launch_1080 · WFS_Social_Announcement_1200x1500 · WFS_Social_Cover_1584x396 | 1:1 · 4:5 · 4:1 |
+| social | posts (quote, statistic, launch) 1:1 · carousel ×4 4:5 · announcement 4:5 · story 9:16 · LinkedIn post · LinkedIn cover · X header · YouTube thumbnail · avatars | see file names |\n| email | WFS_Email_Notification_720 | transactional email |
 | email-signature | WFS_Email_Signature | HTML table |
 
 The sample figures, names ("Northwind Group", "Leila Haddad") and addresses (`*.example`) are fictional placeholders.

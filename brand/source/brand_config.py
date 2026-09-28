@@ -85,9 +85,9 @@ GRADIENTS = {
 # LOGO COLOUR SPECIFICATIONS — icon blades B1..B5 (clockwise from light blade)
 # ---------------------------------------------------------------------------
 ICON_COLOURWAYS = {
-    'primary':   dict(blades=['#7FE3D6', '#14B8A6', '#0E3D42', '#14B8A6', '#022329'], on='light',
+    'primary':   dict(blades=['#7FE3D6', '#14B8A6', '#0F7C74', '#0E3D42', '#022329'], on='light',
                       desc='Primary full-colour icon for light grounds (#F3F5F2, white, light photography).'),
-    'reverse':   dict(blades=['#7FE3D6', '#14B8A6', '#115E5F', '#14B8A6', '#0F7C74'], on='dark',
+    'reverse':   dict(blades=['#DDF5F1', '#7FE3D6', '#14B8A6', '#0F7C74', '#115E5F'], on='dark',
                       desc='Full-colour icon for dark grounds (#022329, #0E3D42, dark photography).'),
 }
 ICON_MONO = {

@@ -11,8 +11,8 @@ Every production file in `brand/`, with purpose, format, variant, colourway and 
 | Logo / icon / wordmark master variants | 32 (each as SVG + vector PDF + transparent PNG set) |
 | Files in logo/, icon/, wordmark/ (excl. README) | 189 |
 | SVG files (whole package) | 75 |
-| PNG files (whole package) | 213 |
-| PDF files (whole package) | 38 |
+| PNG files (whole package) | 239 |
+| PDF files (whole package) | 51 |
 | Native AI files | 0 — requires Adobe Illustrator; run `source/illustrator/export_ai.jsx` (see `logo/ai/README.md`) |
 
 ## Conventions
@@ -135,9 +135,22 @@ Every production file in `brand/`, with purpose, format, variant, colourway and 
 | `motion/WFS_Logo_Reveal.html` | Logo reveal + loading reference prototype (SVG/CSS, no dependencies) | HTML |  |  |  |
 | `templates/presentation/WFS_Presentation_Template.html (+ .pdf, preview PNG)` | Presentation (16:9): title + content slide | HTML, PDF, PNG |  |  |  |
 | `templates/report/WFS_Report_Template.html (+ .pdf, preview PNG)` | A4 report: cover + statement page with header/footer | HTML, PDF, PNG |  |  |  |
-| `templates/social/WFS_Social_Launch_1080.html (+ .pdf, preview PNG)` | Social / launch post 1:1 | HTML, PDF, PNG |  |  |  |
+| `templates/social/WFS_Social_Launch_1080x1080.html (+ .pdf, preview PNG)` | Social / launch post 1:1 | HTML, PDF, PNG |  |  |  |
 | `templates/social/WFS_Social_Announcement_1200x1500.html (+ .pdf, preview PNG)` | Product announcement 4:5 | HTML, PDF, PNG |  |  |  |
-| `templates/social/WFS_Social_Cover_1584x396.html (+ .pdf, preview PNG)` | LinkedIn / social cover 4:1 | HTML, PDF, PNG |  |  |  |
+| `templates/social/WFS_Social_LinkedIn_Cover_1584x396.html (+ .pdf, preview PNG)` | LinkedIn cover 4:1 | HTML, PDF, PNG |  |  |  |
+| `templates/email/WFS_Email_Notification_720.html (+ .pdf, preview PNG)` | Transactional email notification | HTML, PDF, PNG |  |  |  |
+| `templates/social/WFS_Social_Post_Quote_1080x1080.html (+ .pdf, preview PNG)` | Instagram / LinkedIn post · quote | HTML, PDF, PNG |  |  |  |
+| `templates/social/WFS_Social_Post_Stat_1080x1080.html (+ .pdf, preview PNG)` | Instagram / LinkedIn post · statistic | HTML, PDF, PNG |  |  |  |
+| `templates/social/WFS_Social_Carousel_1_1080x1350.html (+ .pdf, preview PNG)` | Carousel slide 1 | HTML, PDF, PNG |  |  |  |
+| `templates/social/WFS_Social_Carousel_2_1080x1350.html (+ .pdf, preview PNG)` | Carousel slide 2 | HTML, PDF, PNG |  |  |  |
+| `templates/social/WFS_Social_Carousel_3_1080x1350.html (+ .pdf, preview PNG)` | Carousel slide 3 | HTML, PDF, PNG |  |  |  |
+| `templates/social/WFS_Social_Carousel_4_1080x1350.html (+ .pdf, preview PNG)` | Carousel slide 4 | HTML, PDF, PNG |  |  |  |
+| `templates/social/WFS_Social_Story_1080x1920.html (+ .pdf, preview PNG)` | Story / Reel cover | HTML, PDF, PNG |  |  |  |
+| `templates/social/WFS_Social_LinkedIn_Post_1200x627.html (+ .pdf, preview PNG)` | LinkedIn link post | HTML, PDF, PNG |  |  |  |
+| `templates/social/WFS_Social_X_Header_1500x500.html (+ .pdf, preview PNG)` | X header | HTML, PDF, PNG |  |  |  |
+| `templates/social/WFS_Social_YouTube_Thumbnail_1280x720.html (+ .pdf, preview PNG)` | YouTube thumbnail | HTML, PDF, PNG |  |  |  |
+| `templates/social/WFS_Social_Avatar_Dark_800x800.html (+ .pdf, preview PNG)` | Profile avatar · dark | HTML, PDF, PNG |  |  |  |
+| `templates/social/WFS_Social_Avatar_Light_800x800.html (+ .pdf, preview PNG)` | Profile avatar · light | HTML, PDF, PNG |  |  |  |
 | `templates/email-signature/WFS_Email_Signature.html` | Email signature (table layout, live text) | HTML |  |  |  |
 | `logo|icon|wordmark/ai/README.md + source/illustrator/export_ai.jsx` | Explains AI status; Illustrator script to create genuine .ai from the SVG masters | Markdown, JSX |  |  |  |
 | `logo/preview/WFS_Logo_Matrix_Preview.png · WFS_Icon_Matrix_Preview.png` | Contact sheets: every lockup / icon on its intended ground (preview, not for reproduction) | PNG (opaque) |  |  |  |
@@ -150,7 +163,7 @@ Every production file in `brand/`, with purpose, format, variant, colourway and 
 
 ## Guidelines & sources
 
-- `guidelines/WFS_Brand_Guidelines_2026.pdf` — A4 landscape, 40 pages · `guidelines/source/` HTML + builder · `guidelines/preview/` page PNGs
+- `guidelines/WFS_Brand_Guidelines_2026.pdf` — A4 landscape, 53 pages · `guidelines/source/` HTML + builder · `guidelines/preview/` page PNGs
 - `source/master/icon_geometry.json`, `source/master/wordmark_geometry.json` — numeric vector masters (circles, biarcs, paths)
 - `source/reference/` — the approved raster artwork the masters were reconstructed from
 - `source/qa/QA_REPORT.md` — automated validation results

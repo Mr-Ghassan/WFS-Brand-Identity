@@ -56,7 +56,7 @@
   "backgrounds": ""
  },
  {
-  "asset": "templates/social/WFS_Social_Launch_1080.html (+ .pdf, preview PNG)",
+  "asset": "templates/social/WFS_Social_Launch_1080x1080.html (+ .pdf, preview PNG)",
   "group": "templates",
   "purpose": "Social / launch post 1:1",
   "format": "HTML, PDF, PNG",
@@ -72,9 +72,113 @@
   "backgrounds": ""
  },
  {
-  "asset": "templates/social/WFS_Social_Cover_1584x396.html (+ .pdf, preview PNG)",
+  "asset": "templates/social/WFS_Social_LinkedIn_Cover_1584x396.html (+ .pdf, preview PNG)",
   "group": "templates",
-  "purpose": "LinkedIn / social cover 4:1",
+  "purpose": "LinkedIn cover 4:1",
+  "format": "HTML, PDF, PNG",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "templates/email/WFS_Email_Notification_720.html (+ .pdf, preview PNG)",
+  "group": "templates",
+  "purpose": "Transactional email notification",
+  "format": "HTML, PDF, PNG",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "templates/social/WFS_Social_Post_Quote_1080x1080.html (+ .pdf, preview PNG)",
+  "group": "templates",
+  "purpose": "Instagram / LinkedIn post \u00b7 quote",
+  "format": "HTML, PDF, PNG",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "templates/social/WFS_Social_Post_Stat_1080x1080.html (+ .pdf, preview PNG)",
+  "group": "templates",
+  "purpose": "Instagram / LinkedIn post \u00b7 statistic",
+  "format": "HTML, PDF, PNG",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "templates/social/WFS_Social_Carousel_1_1080x1350.html (+ .pdf, preview PNG)",
+  "group": "templates",
+  "purpose": "Carousel slide 1",
+  "format": "HTML, PDF, PNG",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "templates/social/WFS_Social_Carousel_2_1080x1350.html (+ .pdf, preview PNG)",
+  "group": "templates",
+  "purpose": "Carousel slide 2",
+  "format": "HTML, PDF, PNG",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "templates/social/WFS_Social_Carousel_3_1080x1350.html (+ .pdf, preview PNG)",
+  "group": "templates",
+  "purpose": "Carousel slide 3",
+  "format": "HTML, PDF, PNG",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "templates/social/WFS_Social_Carousel_4_1080x1350.html (+ .pdf, preview PNG)",
+  "group": "templates",
+  "purpose": "Carousel slide 4",
+  "format": "HTML, PDF, PNG",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "templates/social/WFS_Social_Story_1080x1920.html (+ .pdf, preview PNG)",
+  "group": "templates",
+  "purpose": "Story / Reel cover",
+  "format": "HTML, PDF, PNG",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "templates/social/WFS_Social_LinkedIn_Post_1200x627.html (+ .pdf, preview PNG)",
+  "group": "templates",
+  "purpose": "LinkedIn link post",
+  "format": "HTML, PDF, PNG",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "templates/social/WFS_Social_X_Header_1500x500.html (+ .pdf, preview PNG)",
+  "group": "templates",
+  "purpose": "X header",
+  "format": "HTML, PDF, PNG",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "templates/social/WFS_Social_YouTube_Thumbnail_1280x720.html (+ .pdf, preview PNG)",
+  "group": "templates",
+  "purpose": "YouTube thumbnail",
+  "format": "HTML, PDF, PNG",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "templates/social/WFS_Social_Avatar_Dark_800x800.html (+ .pdf, preview PNG)",
+  "group": "templates",
+  "purpose": "Profile avatar \u00b7 dark",
+  "format": "HTML, PDF, PNG",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "templates/social/WFS_Social_Avatar_Light_800x800.html (+ .pdf, preview PNG)",
+  "group": "templates",
+  "purpose": "Profile avatar \u00b7 light",
   "format": "HTML, PDF, PNG",
   "variant": "",
   "backgrounds": ""

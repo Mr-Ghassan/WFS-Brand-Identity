@@ -6,7 +6,7 @@ Brand direction **Concept C — Unified Financial Field** (form) · colour famil
 
 | Start here | |
 |---|---|
-| Brand guidelines (A4 landscape, 40 pp) | [`guidelines/WFS_Brand_Guidelines_2026.pdf`](guidelines/WFS_Brand_Guidelines_2026.pdf) |
+| Brand guidelines (A4 landscape, 53 pp) | [`guidelines/WFS_Brand_Guidelines_2026.pdf`](guidelines/WFS_Brand_Guidelines_2026.pdf) |
 | Every file, what it's for | [`WFS_BRAND_ASSET_INDEX.md`](WFS_BRAND_ASSET_INDEX.md) |
 | Primary logo | [`logo/svg/WFS_Logo_Horizontal_Primary.svg`](logo/svg/WFS_Logo_Horizontal_Primary.svg) · Inverse: [`WFS_Logo_Horizontal_Inverse.svg`](logo/svg/WFS_Logo_Horizontal_Inverse.svg) |
 | Icon | [`icon/svg/WFS_Icon_Primary.svg`](icon/svg/WFS_Icon_Primary.svg) |
