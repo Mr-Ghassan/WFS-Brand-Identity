@@ -1,0 +1,74 @@
+[
+ {
+  "asset": "WFS_AppIcon_Dark_master.svg + 1024/512/256/128 PNG",
+  "group": "icon",
+  "purpose": "App icon master (square, unmasked)",
+  "format": "SVG, PNG",
+  "variant": "Dark",
+  "backgrounds": "n/a (opaque)"
+ },
+ {
+  "asset": "WFS_AppIcon_Light_master.svg + 1024/512/256/128 PNG",
+  "group": "icon",
+  "purpose": "App icon master (square, unmasked)",
+  "format": "SVG, PNG",
+  "variant": "Light",
+  "backgrounds": "n/a (opaque)"
+ },
+ {
+  "asset": "WFS_AppIcon_Premium_master.svg + 1024/512/256/128 PNG",
+  "group": "icon",
+  "purpose": "App icon master (square, unmasked)",
+  "format": "SVG, PNG",
+  "variant": "Premium",
+  "backgrounds": "n/a (opaque)"
+ },
+ {
+  "asset": "WFS_AppIcon_Dark_64/48/32/16.png",
+  "group": "icon",
+  "purpose": "Small app icon sizes (compact artwork)",
+  "format": "PNG",
+  "variant": "Dark compact",
+  "backgrounds": "n/a (opaque)"
+ },
+ {
+  "asset": "WFS_Android_Adaptive_foreground/background/monochrome",
+  "group": "icon",
+  "purpose": "Android adaptive + themed icon layers (108 dp @4x)",
+  "format": "SVG, PNG",
+  "variant": "Adaptive",
+  "backgrounds": "layered"
+ },
+ {
+  "asset": "favicon.svg",
+  "group": "icon",
+  "purpose": "Adaptive SVG favicon (light/dark aware, transparent)",
+  "format": "SVG",
+  "variant": "Primary / Inverse",
+  "backgrounds": "browser tabs, light + dark"
+ },
+ {
+  "asset": "favicon.ico (16/32/48) + favicon-16/32/48 PNG",
+  "group": "icon",
+  "purpose": "Legacy / raster favicon",
+  "format": "ICO, PNG",
+  "variant": "Dark tile",
+  "backgrounds": "browser tabs, light + dark"
+ },
+ {
+  "asset": "apple-touch-icon.png (180), android-chrome 192/512, maskable 512",
+  "group": "icon",
+  "purpose": "Home-screen / PWA icons",
+  "format": "PNG",
+  "variant": "Dark",
+  "backgrounds": "n/a (opaque)"
+ },
+ {
+  "asset": "site.webmanifest, head-snippet.html",
+  "group": "icon",
+  "purpose": "Web integration",
+  "format": "JSON, HTML",
+  "variant": "-",
+  "backgrounds": "-"
+ }
+]

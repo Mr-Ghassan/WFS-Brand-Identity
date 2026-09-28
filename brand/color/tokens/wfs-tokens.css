@@ -1,0 +1,59 @@
+/* WFS Brand Identity v1.0 — colour tokens (generated from source/brand_config.py) */
+:root {
+  --wfs-wfs-dark: #022329;  /* WFS Dark */
+  --wfs-wfs-deep: #0E3D42;  /* WFS Deep Teal */
+  --wfs-wfs-teal: #14B8A6;  /* WFS Primary Teal */
+  --wfs-wfs-mint: #7FE3D6;  /* WFS Light Mint */
+  --wfs-wfs-offwhite: #F3F5F2;  /* WFS Soft Off-White */
+  --wfs-teal-800: #115E5F;  /* Teal 800 */
+  --wfs-teal-700: #0F7C74;  /* Teal 700 */
+  --wfs-teal-600: #11998B;  /* Teal 600 */
+  --wfs-teal-200: #B9EFE7;  /* Mint 200 */
+  --wfs-teal-100: #DDF5F1;  /* Mint 100 */
+  --wfs-slate-600: #4A5E61;  /* Slate 600 */
+  --wfs-slate-400: #80918F;  /* Slate 400 */
+  --wfs-line-200: #D6DEDB;  /* Line 200 */
+  --wfs-paper-0: #FFFFFF;  /* White */
+  --wfs-line-dark: #1E4A4F;  /* Line Dark */
+  --wfs-text-dark-2: #9DB5B3;  /* Mist 300 */
+  --wfs-positive: #0F7C74;  /* Positive */
+  --wfs-negative: #B4232F;  /* Negative */
+  --wfs-warning: #B7791F;  /* Warning */
+  --wfs-info: #2F6F9F;  /* Info */
+  --wfs-light-background: #F3F5F2;
+  --wfs-light-surface: #FFFFFF;
+  --wfs-light-surface-alt: #DDF5F1;
+  --wfs-light-text: #022329;
+  --wfs-light-text-2: #4A5E61;
+  --wfs-light-text-3: #80918F;
+  --wfs-light-border: #D6DEDB;
+  --wfs-light-primary: #14B8A6;
+  --wfs-light-primary-text: #0F7C74;
+  --wfs-light-accent: #7FE3D6;
+  --wfs-light-inverse: #022329;
+  --wfs-dark-background: #022329;
+  --wfs-dark-surface: #0E3D42;
+  --wfs-dark-surface-alt: #115E5F;
+  --wfs-dark-text: #F3F5F2;
+  --wfs-dark-text-2: #9DB5B3;
+  --wfs-dark-text-3: #80918F;
+  --wfs-dark-border: #1E4A4F;
+  --wfs-dark-primary: #14B8A6;
+  --wfs-dark-primary-text: #7FE3D6;
+  --wfs-dark-accent: #7FE3D6;
+  --wfs-dark-inverse: #F3F5F2;
+  --wfs-data-1: #11A393;
+  --wfs-data-2: #3067C9;
+  --wfs-data-3: #C8691E;
+  --wfs-data-4: #B94E8A;
+  --wfs-data-1-dark: #12A594;
+  --wfs-data-2-dark: #5A8CE0;
+  --wfs-data-3-dark: #D6782C;
+  --wfs-data-4-dark: #C95C9E;
+  --wfs-font-en: "Instrument Sans", system-ui, sans-serif;
+  --wfs-font-ar: "Myriad Arabic", sans-serif;
+  --wfs-numeric: "tnum" 1, "lnum" 1;
+  --wfs-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --wfs-ease-converge: cubic-bezier(0.65, 0, 0.35, 1);
+  --wfs-ease-lock: cubic-bezier(0.3, 1.2, 0.4, 1);
+}

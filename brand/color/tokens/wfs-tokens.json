@@ -1,0 +1,468 @@
+{
+  "version": "1.0",
+  "core": {
+    "wfs-dark": {
+      "name": "WFS Dark",
+      "hex": "#022329",
+      "rgb": [
+        2,
+        35,
+        41
+      ],
+      "cmyk_approx": [
+        95,
+        15,
+        0,
+        84
+      ],
+      "usage": "Near-black teal. Primary dark ground, primary text on light."
+    },
+    "wfs-deep": {
+      "name": "WFS Deep Teal",
+      "hex": "#0E3D42",
+      "rgb": [
+        14,
+        61,
+        66
+      ],
+      "cmyk_approx": [
+        79,
+        8,
+        0,
+        74
+      ],
+      "usage": "Secondary dark ground, surfaces on dark, depth in the icon."
+    },
+    "wfs-teal": {
+      "name": "WFS Primary Teal",
+      "hex": "#14B8A6",
+      "rgb": [
+        20,
+        184,
+        166
+      ],
+      "cmyk_approx": [
+        89,
+        0,
+        10,
+        28
+      ],
+      "usage": "Signature brand colour. Icon, accents, data highlights."
+    },
+    "wfs-mint": {
+      "name": "WFS Light Mint",
+      "hex": "#7FE3D6",
+      "rgb": [
+        127,
+        227,
+        214
+      ],
+      "cmyk_approx": [
+        44,
+        0,
+        6,
+        11
+      ],
+      "usage": "Light accent. Icon light blade, accents on dark, highlights."
+    },
+    "wfs-offwhite": {
+      "name": "WFS Soft Off-White",
+      "hex": "#F3F5F2",
+      "rgb": [
+        243,
+        245,
+        242
+      ],
+      "cmyk_approx": [
+        1,
+        0,
+        1,
+        4
+      ],
+      "usage": "Primary light ground and text on dark."
+    }
+  },
+  "derived": {
+    "teal-800": {
+      "name": "Teal 800",
+      "hex": "#115E5F",
+      "rgb": [
+        17,
+        94,
+        95
+      ],
+      "cmyk_approx": [
+        82,
+        1,
+        0,
+        63
+      ],
+      "usage": "Derived. Icon dark blade on dark grounds; deep data series."
+    },
+    "teal-700": {
+      "name": "Teal 700",
+      "hex": "#0F7C74",
+      "rgb": [
+        15,
+        124,
+        116
+      ],
+      "cmyk_approx": [
+        88,
+        0,
+        6,
+        51
+      ],
+      "usage": "Derived. Accessible teal for text/links on light grounds."
+    },
+    "teal-600": {
+      "name": "Teal 600",
+      "hex": "#11998B",
+      "rgb": [
+        17,
+        153,
+        139
+      ],
+      "cmyk_approx": [
+        89,
+        0,
+        9,
+        40
+      ],
+      "usage": "Derived. Hover / pressed state of Primary Teal."
+    },
+    "teal-200": {
+      "name": "Mint 200",
+      "hex": "#B9EFE7",
+      "rgb": [
+        185,
+        239,
+        231
+      ],
+      "cmyk_approx": [
+        23,
+        0,
+        3,
+        6
+      ],
+      "usage": "Derived. Tints, selection, chart fills on light."
+    },
+    "teal-100": {
+      "name": "Mint 100",
+      "hex": "#DDF5F1",
+      "rgb": [
+        221,
+        245,
+        241
+      ],
+      "cmyk_approx": [
+        10,
+        0,
+        2,
+        4
+      ],
+      "usage": "Derived. Subtle tinted surfaces on light."
+    },
+    "slate-600": {
+      "name": "Slate 600",
+      "hex": "#4A5E61",
+      "rgb": [
+        74,
+        94,
+        97
+      ],
+      "cmyk_approx": [
+        24,
+        3,
+        0,
+        62
+      ],
+      "usage": "Derived neutral. Secondary text on light."
+    },
+    "slate-400": {
+      "name": "Slate 400",
+      "hex": "#80918F",
+      "rgb": [
+        128,
+        145,
+        143
+      ],
+      "cmyk_approx": [
+        12,
+        0,
+        1,
+        43
+      ],
+      "usage": "Derived neutral. Tertiary text, captions, disabled."
+    },
+    "line-200": {
+      "name": "Line 200",
+      "hex": "#D6DEDB",
+      "rgb": [
+        214,
+        222,
+        219
+      ],
+      "cmyk_approx": [
+        4,
+        0,
+        1,
+        13
+      ],
+      "usage": "Derived neutral. Borders and dividers on light."
+    },
+    "paper-0": {
+      "name": "White",
+      "hex": "#FFFFFF",
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "cmyk_approx": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "usage": "Pure white surface (cards, documents)."
+    },
+    "line-dark": {
+      "name": "Line Dark",
+      "hex": "#1E4A4F",
+      "rgb": [
+        30,
+        74,
+        79
+      ],
+      "cmyk_approx": [
+        62,
+        6,
+        0,
+        69
+      ],
+      "usage": "Derived. Borders and dividers on dark."
+    },
+    "text-dark-2": {
+      "name": "Mist 300",
+      "hex": "#9DB5B3",
+      "rgb": [
+        157,
+        181,
+        179
+      ],
+      "cmyk_approx": [
+        13,
+        0,
+        1,
+        29
+      ],
+      "usage": "Derived. Secondary text on dark."
+    }
+  },
+  "functional": {
+    "positive": {
+      "name": "Positive",
+      "hex": "#0F7C74",
+      "rgb": [
+        15,
+        124,
+        116
+      ],
+      "cmyk_approx": [
+        88,
+        0,
+        6,
+        51
+      ],
+      "usage": "Gains, credits, success (Teal 700)."
+    },
+    "negative": {
+      "name": "Negative",
+      "hex": "#B4232F",
+      "rgb": [
+        180,
+        35,
+        47
+      ],
+      "cmyk_approx": [
+        0,
+        81,
+        74,
+        29
+      ],
+      "usage": "Losses, debits in deficit, errors."
+    },
+    "warning": {
+      "name": "Warning",
+      "hex": "#B7791F",
+      "rgb": [
+        183,
+        121,
+        31
+      ],
+      "cmyk_approx": [
+        0,
+        34,
+        83,
+        28
+      ],
+      "usage": "Pending approvals, due soon."
+    },
+    "info": {
+      "name": "Info",
+      "hex": "#2F6F9F",
+      "rgb": [
+        47,
+        111,
+        159
+      ],
+      "cmyk_approx": [
+        70,
+        30,
+        0,
+        38
+      ],
+      "usage": "Neutral system information."
+    }
+  },
+  "roles": {
+    "light": {
+      "background": "#F3F5F2",
+      "surface": "#FFFFFF",
+      "surface_alt": "#DDF5F1",
+      "text": "#022329",
+      "text_2": "#4A5E61",
+      "text_3": "#80918F",
+      "border": "#D6DEDB",
+      "primary": "#14B8A6",
+      "primary_text": "#0F7C74",
+      "accent": "#7FE3D6",
+      "inverse": "#022329"
+    },
+    "dark": {
+      "background": "#022329",
+      "surface": "#0E3D42",
+      "surface_alt": "#115E5F",
+      "text": "#F3F5F2",
+      "text_2": "#9DB5B3",
+      "text_3": "#80918F",
+      "border": "#1E4A4F",
+      "primary": "#14B8A6",
+      "primary_text": "#7FE3D6",
+      "accent": "#7FE3D6",
+      "inverse": "#F3F5F2"
+    }
+  },
+  "gradients": {
+    "primary": {
+      "name": "Primary Gradient",
+      "angle": 135,
+      "stops": [
+        [
+          "#14B8A6",
+          0
+        ],
+        [
+          "#7FE3D6",
+          100
+        ]
+      ],
+      "use": "Accent surfaces, key data highlights, CTA backgrounds on dark. Never behind body text."
+    },
+    "deep": {
+      "name": "Deep Gradient",
+      "angle": 160,
+      "stops": [
+        [
+          "#0E3D42",
+          0
+        ],
+        [
+          "#022329",
+          100
+        ]
+      ],
+      "use": "Default dark background for covers, launch screens, presentation grounds."
+    },
+    "light": {
+      "name": "Light Gradient",
+      "angle": 180,
+      "stops": [
+        [
+          "#FFFFFF",
+          0
+        ],
+        [
+          "#F3F5F2",
+          100
+        ]
+      ],
+      "use": "Light page grounds and documents; barely perceptible depth."
+    },
+    "ambient": {
+      "name": "Ambient Field",
+      "angle": null,
+      "kind": "radial",
+      "stops": [
+        [
+          "#14B8A6",
+          0,
+          0.28
+        ],
+        [
+          "#0E3D42",
+          45,
+          0.0
+        ]
+      ],
+      "base": "#022329",
+      "use": "Soft light field behind the icon or hero UI on dark grounds."
+    },
+    "premium": {
+      "name": "Premium Display Gradient",
+      "angle": 145,
+      "stops": [
+        [
+          "#7FE3D6",
+          0
+        ],
+        [
+          "#14B8A6",
+          38
+        ],
+        [
+          "#0E3D42",
+          78
+        ],
+        [
+          "#022329",
+          100
+        ]
+      ],
+      "use": "Premium display logo, launch graphics and event screens only."
+    }
+  },
+  "dataviz": {
+    "light": [
+      "#11A393",
+      "#3067C9",
+      "#C8691E",
+      "#B94E8A"
+    ],
+    "dark": [
+      "#12A594",
+      "#5A8CE0",
+      "#D6782C",
+      "#C95C9E"
+    ],
+    "sequential": [
+      "#DDF5F1",
+      "#B9EFE7",
+      "#7FE3D6",
+      "#14B8A6",
+      "#0F7C74",
+      "#0E3D42"
+    ]
+  }
+}

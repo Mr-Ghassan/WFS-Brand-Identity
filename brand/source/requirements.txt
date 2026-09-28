@@ -1,0 +1,12 @@
+pillow
+numpy
+scipy
+scikit-image
+opencv-python-headless
+shapely
+fonttools
+brotli
+uharfbuzz
+potracer
+cairosvg
+pypdf

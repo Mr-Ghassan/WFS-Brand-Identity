@@ -1,0 +1,384 @@
+[
+ {
+  "asset": "WFS_Pattern_01_Unified_Field_Dark",
+  "group": "graphic-system/patterns",
+  "purpose": "Presentation / cover / web section background",
+  "files": [
+   "graphic-system/patterns/WFS_Pattern_01_Unified_Field_Dark.svg",
+   "graphic-system/patterns/WFS_Pattern_01_Unified_Field_Dark.png"
+  ],
+  "variant": "dark",
+  "backgrounds": "dark"
+ },
+ {
+  "asset": "WFS_Pattern_01_Unified_Field_Tile_Dark",
+  "group": "graphic-system/patterns",
+  "purpose": "Seamless repeat tile (240 px)",
+  "files": [
+   "graphic-system/patterns/WFS_Pattern_01_Unified_Field_Tile_Dark.svg",
+   "graphic-system/patterns/WFS_Pattern_01_Unified_Field_Tile_Dark.png"
+  ],
+  "variant": "dark",
+  "backgrounds": "dark"
+ },
+ {
+  "asset": "WFS_Pattern_02_Financial_Convergence_Dark",
+  "group": "graphic-system/patterns",
+  "purpose": "Launch graphics, event screens, report covers",
+  "files": [
+   "graphic-system/patterns/WFS_Pattern_02_Financial_Convergence_Dark.svg",
+   "graphic-system/patterns/WFS_Pattern_02_Financial_Convergence_Dark.png"
+  ],
+  "variant": "dark",
+  "backgrounds": "dark"
+ },
+ {
+  "asset": "WFS_Pattern_03_Structured_Orbit_Dark",
+  "group": "graphic-system/patterns",
+  "purpose": "Data / analytics contexts, dashboards, section dividers",
+  "files": [
+   "graphic-system/patterns/WFS_Pattern_03_Structured_Orbit_Dark.svg",
+   "graphic-system/patterns/WFS_Pattern_03_Structured_Orbit_Dark.png"
+  ],
+  "variant": "dark",
+  "backgrounds": "dark"
+ },
+ {
+  "asset": "WFS_Pattern_03_Structured_Orbit_Tile_Dark",
+  "group": "graphic-system/patterns",
+  "purpose": "Seamless repeat tile (200 px)",
+  "files": [
+   "graphic-system/patterns/WFS_Pattern_03_Structured_Orbit_Tile_Dark.svg",
+   "graphic-system/patterns/WFS_Pattern_03_Structured_Orbit_Tile_Dark.png"
+  ],
+  "variant": "dark",
+  "backgrounds": "dark"
+ },
+ {
+  "asset": "WFS_Field_Ambient_Dark",
+  "group": "graphic-system/fields",
+  "purpose": "Soft light field behind hero content",
+  "files": [
+   "graphic-system/fields/WFS_Field_Ambient_Dark.svg",
+   "graphic-system/fields/WFS_Field_Ambient_Dark.png"
+  ],
+  "variant": "dark",
+  "backgrounds": "dark"
+ },
+ {
+  "asset": "WFS_Field_Aperture_Crop_Dark",
+  "group": "graphic-system/fields",
+  "purpose": "Cropped icon geometry at architectural scale",
+  "files": [
+   "graphic-system/fields/WFS_Field_Aperture_Crop_Dark.svg",
+   "graphic-system/fields/WFS_Field_Aperture_Crop_Dark.png"
+  ],
+  "variant": "dark",
+  "backgrounds": "dark"
+ },
+ {
+  "asset": "WFS_Field_Construction_Rings_Dark",
+  "group": "graphic-system/fields",
+  "purpose": "Line structure from the icon construction circles",
+  "files": [
+   "graphic-system/fields/WFS_Field_Construction_Rings_Dark.svg",
+   "graphic-system/fields/WFS_Field_Construction_Rings_Dark.png"
+  ],
+  "variant": "dark",
+  "backgrounds": "dark"
+ },
+ {
+  "asset": "WFS_Field_Glint_Dark",
+  "group": "graphic-system/fields",
+  "purpose": "Controlled light effect (lit blade edge)",
+  "files": [
+   "graphic-system/fields/WFS_Field_Glint_Dark.svg",
+   "graphic-system/fields/WFS_Field_Glint_Dark.png"
+  ],
+  "variant": "dark",
+  "backgrounds": "dark"
+ },
+ {
+  "asset": "WFS_Field_Grid_Nodes_Dark",
+  "group": "graphic-system/fields",
+  "purpose": "Structured grid with system nodes",
+  "files": [
+   "graphic-system/fields/WFS_Field_Grid_Nodes_Dark.svg",
+   "graphic-system/fields/WFS_Field_Grid_Nodes_Dark.png"
+  ],
+  "variant": "dark",
+  "backgrounds": "dark"
+ },
+ {
+  "asset": "WFS_Pattern_01_Unified_Field_Light",
+  "group": "graphic-system/patterns",
+  "purpose": "Presentation / cover / web section background",
+  "files": [
+   "graphic-system/patterns/WFS_Pattern_01_Unified_Field_Light.svg",
+   "graphic-system/patterns/WFS_Pattern_01_Unified_Field_Light.png"
+  ],
+  "variant": "light",
+  "backgrounds": "light"
+ },
+ {
+  "asset": "WFS_Pattern_01_Unified_Field_Tile_Light",
+  "group": "graphic-system/patterns",
+  "purpose": "Seamless repeat tile (240 px)",
+  "files": [
+   "graphic-system/patterns/WFS_Pattern_01_Unified_Field_Tile_Light.svg",
+   "graphic-system/patterns/WFS_Pattern_01_Unified_Field_Tile_Light.png"
+  ],
+  "variant": "light",
+  "backgrounds": "light"
+ },
+ {
+  "asset": "WFS_Pattern_02_Financial_Convergence_Light",
+  "group": "graphic-system/patterns",
+  "purpose": "Launch graphics, event screens, report covers",
+  "files": [
+   "graphic-system/patterns/WFS_Pattern_02_Financial_Convergence_Light.svg",
+   "graphic-system/patterns/WFS_Pattern_02_Financial_Convergence_Light.png"
+  ],
+  "variant": "light",
+  "backgrounds": "light"
+ },
+ {
+  "asset": "WFS_Pattern_03_Structured_Orbit_Light",
+  "group": "graphic-system/patterns",
+  "purpose": "Data / analytics contexts, dashboards, section dividers",
+  "files": [
+   "graphic-system/patterns/WFS_Pattern_03_Structured_Orbit_Light.svg",
+   "graphic-system/patterns/WFS_Pattern_03_Structured_Orbit_Light.png"
+  ],
+  "variant": "light",
+  "backgrounds": "light"
+ },
+ {
+  "asset": "WFS_Pattern_03_Structured_Orbit_Tile_Light",
+  "group": "graphic-system/patterns",
+  "purpose": "Seamless repeat tile (200 px)",
+  "files": [
+   "graphic-system/patterns/WFS_Pattern_03_Structured_Orbit_Tile_Light.svg",
+   "graphic-system/patterns/WFS_Pattern_03_Structured_Orbit_Tile_Light.png"
+  ],
+  "variant": "light",
+  "backgrounds": "light"
+ },
+ {
+  "asset": "WFS_Field_Ambient_Light",
+  "group": "graphic-system/fields",
+  "purpose": "Soft light field behind hero content",
+  "files": [
+   "graphic-system/fields/WFS_Field_Ambient_Light.svg",
+   "graphic-system/fields/WFS_Field_Ambient_Light.png"
+  ],
+  "variant": "light",
+  "backgrounds": "light"
+ },
+ {
+  "asset": "WFS_Field_Aperture_Crop_Light",
+  "group": "graphic-system/fields",
+  "purpose": "Cropped icon geometry at architectural scale",
+  "files": [
+   "graphic-system/fields/WFS_Field_Aperture_Crop_Light.svg",
+   "graphic-system/fields/WFS_Field_Aperture_Crop_Light.png"
+  ],
+  "variant": "light",
+  "backgrounds": "light"
+ },
+ {
+  "asset": "WFS_Field_Construction_Rings_Light",
+  "group": "graphic-system/fields",
+  "purpose": "Line structure from the icon construction circles",
+  "files": [
+   "graphic-system/fields/WFS_Field_Construction_Rings_Light.svg",
+   "graphic-system/fields/WFS_Field_Construction_Rings_Light.png"
+  ],
+  "variant": "light",
+  "backgrounds": "light"
+ },
+ {
+  "asset": "WFS_Field_Glint_Light",
+  "group": "graphic-system/fields",
+  "purpose": "Controlled light effect (lit blade edge)",
+  "files": [
+   "graphic-system/fields/WFS_Field_Glint_Light.svg",
+   "graphic-system/fields/WFS_Field_Glint_Light.png"
+  ],
+  "variant": "light",
+  "backgrounds": "light"
+ },
+ {
+  "asset": "WFS_Field_Grid_Nodes_Light",
+  "group": "graphic-system/fields",
+  "purpose": "Structured grid with system nodes",
+  "files": [
+   "graphic-system/fields/WFS_Field_Grid_Nodes_Light.svg",
+   "graphic-system/fields/WFS_Field_Grid_Nodes_Light.png"
+  ],
+  "variant": "light",
+  "backgrounds": "light"
+ },
+ {
+  "asset": "WFS_Overlay_Unified_Field_OnDark",
+  "group": "graphic-system/fields",
+  "purpose": "Transparent overlay",
+  "files": [
+   "graphic-system/fields/WFS_Overlay_Unified_Field_OnDark.svg",
+   "graphic-system/fields/WFS_Overlay_Unified_Field_OnDark.png"
+  ],
+  "variant": "overlay",
+  "backgrounds": "dark"
+ },
+ {
+  "asset": "WFS_Overlay_Convergence_OnDark",
+  "group": "graphic-system/fields",
+  "purpose": "Transparent overlay",
+  "files": [
+   "graphic-system/fields/WFS_Overlay_Convergence_OnDark.svg",
+   "graphic-system/fields/WFS_Overlay_Convergence_OnDark.png"
+  ],
+  "variant": "overlay",
+  "backgrounds": "dark"
+ },
+ {
+  "asset": "WFS_Overlay_Aperture_Crop_OnLight",
+  "group": "graphic-system/fields",
+  "purpose": "Transparent overlay",
+  "files": [
+   "graphic-system/fields/WFS_Overlay_Aperture_Crop_OnLight.svg",
+   "graphic-system/fields/WFS_Overlay_Aperture_Crop_OnLight.png"
+  ],
+  "variant": "overlay",
+  "backgrounds": "light"
+ },
+ {
+  "asset": "WFS_Gradient_Primary",
+  "group": "graphic-system/gradients",
+  "purpose": "Accent surfaces, key data highlights, CTA backgrounds on dark. Never behind body text.",
+  "files": [
+   "graphic-system/gradients/WFS_Gradient_Primary.svg",
+   "graphic-system/gradients/WFS_Gradient_Primary.png"
+  ],
+  "variant": "primary",
+  "backgrounds": ""
+ },
+ {
+  "asset": "WFS_Gradient_Deep",
+  "group": "graphic-system/gradients",
+  "purpose": "Default dark background for covers, launch screens, presentation grounds.",
+  "files": [
+   "graphic-system/gradients/WFS_Gradient_Deep.svg",
+   "graphic-system/gradients/WFS_Gradient_Deep.png"
+  ],
+  "variant": "deep",
+  "backgrounds": ""
+ },
+ {
+  "asset": "WFS_Gradient_Light",
+  "group": "graphic-system/gradients",
+  "purpose": "Light page grounds and documents; barely perceptible depth.",
+  "files": [
+   "graphic-system/gradients/WFS_Gradient_Light.svg",
+   "graphic-system/gradients/WFS_Gradient_Light.png"
+  ],
+  "variant": "light",
+  "backgrounds": ""
+ },
+ {
+  "asset": "WFS_Gradient_Ambient",
+  "group": "graphic-system/gradients",
+  "purpose": "Soft light field behind the icon or hero UI on dark grounds.",
+  "files": [
+   "graphic-system/gradients/WFS_Gradient_Ambient.svg",
+   "graphic-system/gradients/WFS_Gradient_Ambient.png"
+  ],
+  "variant": "ambient",
+  "backgrounds": ""
+ },
+ {
+  "asset": "WFS_Gradient_Premium",
+  "group": "graphic-system/gradients",
+  "purpose": "Premium display logo, launch graphics and event screens only.",
+  "files": [
+   "graphic-system/gradients/WFS_Gradient_Premium.svg",
+   "graphic-system/gradients/WFS_Gradient_Premium.png"
+  ],
+  "variant": "premium",
+  "backgrounds": ""
+ },
+ {
+  "asset": "WFS_Background_16x9_Dark_Field",
+  "group": "graphic-system/backgrounds",
+  "purpose": "Ready-to-use background composition",
+  "files": [
+   "graphic-system/backgrounds/WFS_Background_16x9_Dark_Field.svg",
+   "graphic-system/backgrounds/WFS_Background_16x9_Dark_Field.png"
+  ],
+  "variant": "dark",
+  "backgrounds": ""
+ },
+ {
+  "asset": "WFS_Background_16x9_Dark_Convergence",
+  "group": "graphic-system/backgrounds",
+  "purpose": "Ready-to-use background composition",
+  "files": [
+   "graphic-system/backgrounds/WFS_Background_16x9_Dark_Convergence.svg",
+   "graphic-system/backgrounds/WFS_Background_16x9_Dark_Convergence.png"
+  ],
+  "variant": "dark",
+  "backgrounds": ""
+ },
+ {
+  "asset": "WFS_Background_16x9_Light_Field",
+  "group": "graphic-system/backgrounds",
+  "purpose": "Ready-to-use background composition",
+  "files": [
+   "graphic-system/backgrounds/WFS_Background_16x9_Light_Field.svg",
+   "graphic-system/backgrounds/WFS_Background_16x9_Light_Field.png"
+  ],
+  "variant": "light",
+  "backgrounds": ""
+ },
+ {
+  "asset": "WFS_Background_1x1_Dark_Convergence",
+  "group": "graphic-system/backgrounds",
+  "purpose": "Ready-to-use background composition",
+  "files": [
+   "graphic-system/backgrounds/WFS_Background_1x1_Dark_Convergence.svg",
+   "graphic-system/backgrounds/WFS_Background_1x1_Dark_Convergence.png"
+  ],
+  "variant": "dark",
+  "backgrounds": ""
+ },
+ {
+  "asset": "WFS_Background_A4_Dark_Cover",
+  "group": "graphic-system/backgrounds",
+  "purpose": "Ready-to-use background composition",
+  "files": [
+   "graphic-system/backgrounds/WFS_Background_A4_Dark_Cover.svg",
+   "graphic-system/backgrounds/WFS_Background_A4_Dark_Cover.png"
+  ],
+  "variant": "dark",
+  "backgrounds": ""
+ },
+ {
+  "asset": "WFS_Background_A4_Light_Cover",
+  "group": "graphic-system/backgrounds",
+  "purpose": "Ready-to-use background composition",
+  "files": [
+   "graphic-system/backgrounds/WFS_Background_A4_Light_Cover.svg",
+   "graphic-system/backgrounds/WFS_Background_A4_Light_Cover.png"
+  ],
+  "variant": "light",
+  "backgrounds": ""
+ },
+ {
+  "asset": "graphic-system/preview/*_preview.png",
+  "group": "graphic-system/preview",
+  "purpose": "Thumbnail-scale previews (for documents and overviews, not production)",
+  "files": [],
+  "variant": "preview",
+  "backgrounds": ""
+ }
+]

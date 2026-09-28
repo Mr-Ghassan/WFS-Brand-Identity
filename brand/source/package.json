@@ -1,0 +1,10 @@
+{
+  "name": "wfs-brand-build",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WFS Brand Identity build tooling (HTML -> PDF/PNG rendering via Chromium)",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "playwright-core": "^1.55.0"
+  }
+}

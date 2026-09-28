@@ -1,0 +1,74 @@
+{
+ "stats": {
+  "svg": 75,
+  "png": 213,
+  "pdf": 38,
+  "ai": 0,
+  "jpg": 5
+ },
+ "issues": [],
+ "guidelines": {
+  "pages": 40,
+  "size_mm": [
+   297.0,
+   209.9
+  ],
+  "font_fallbacks": [],
+  "fonts": [
+   "InstrumentSans-Bold",
+   "InstrumentSans-Medium",
+   "InstrumentSans-Regular",
+   "InstrumentSans-SemiBold",
+   "LiberationSerif-Bold",
+   "NotoSansArabic-Regular",
+   "NotoSansArabic-SemiBold"
+  ]
+ },
+ "fidelity": {
+  "qa_icon_fidelity.py": "solid silhouette IoU 0.9918 blade IoU {'B1': 0.9754, 'B2': 0.9684, 'B3': 0.9598, 'B4': 0.9703, 'B5': 0.9645} mean 0.9677",
+  "qa_wordmark_fidelity.py": "wordmark IoU 0.9969 xor px 941"
+ },
+ "colours": [
+  "#000000",
+  "#021A1F",
+  "#022329",
+  "#062E33",
+  "#06363A",
+  "#07343B",
+  "#0B3237",
+  "#0C4447",
+  "#0E3D42",
+  "#0F6E69",
+  "#0F7C74",
+  "#0F8F82",
+  "#0F9E8F",
+  "#10474C",
+  "#115E5F",
+  "#138A80",
+  "#14B8A6",
+  "#1B1F1F",
+  "#1C7473",
+  "#3E4443",
+  "#3FCDBC",
+  "#43BEAE",
+  "#4A5E61",
+  "#57C9BA",
+  "#5FD9CA",
+  "#6ADDCE",
+  "#7B8281",
+  "#7F8786",
+  "#7FE3D6",
+  "#8AE8DC",
+  "#9DB5B3",
+  "#A3AAA9",
+  "#A9EDE3",
+  "#B8BDBC",
+  "#B9EFE7",
+  "#CDD2D1",
+  "#D9F7F2",
+  "#DDF5F1",
+  "#EFFFFC",
+  "#F3F5F2",
+  "#FFFFFF"
+ ]
+}

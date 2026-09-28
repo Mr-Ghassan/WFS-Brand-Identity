@@ -1,0 +1,106 @@
+[
+ {
+  "asset": "color/tokens/wfs-tokens.css \u00b7 _wfs-tokens.scss \u00b7 wfs-tokens.json",
+  "group": "color",
+  "purpose": "Design tokens (colour, roles, data palette, type, motion easing)",
+  "format": "CSS, SCSS, JSON",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "color/swatches/WFS_Colors.ase \u00b7 WFS_Colors.gpl",
+  "group": "color",
+  "purpose": "Swatch libraries for Adobe apps and GIMP/Inkscape/Krita",
+  "format": "ASE, GPL",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "color/swatches/WFS_Core_Colors.svg",
+  "group": "color",
+  "purpose": "Core palette sheet with HEX / RGB / CMYK\u2248",
+  "format": "SVG",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "typography/README.md",
+  "group": "typography",
+  "purpose": "Typefaces, licences, hierarchy, financial numerals, Arabic status",
+  "format": "Markdown",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "motion/WFS_Logo_Reveal.html",
+  "group": "motion",
+  "purpose": "Logo reveal + loading reference prototype (SVG/CSS, no dependencies)",
+  "format": "HTML",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "templates/presentation/WFS_Presentation_Template.html (+ .pdf, preview PNG)",
+  "group": "templates",
+  "purpose": "Presentation (16:9): title + content slide",
+  "format": "HTML, PDF, PNG",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "templates/report/WFS_Report_Template.html (+ .pdf, preview PNG)",
+  "group": "templates",
+  "purpose": "A4 report: cover + statement page with header/footer",
+  "format": "HTML, PDF, PNG",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "templates/social/WFS_Social_Launch_1080.html (+ .pdf, preview PNG)",
+  "group": "templates",
+  "purpose": "Social / launch post 1:1",
+  "format": "HTML, PDF, PNG",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "templates/social/WFS_Social_Announcement_1200x1500.html (+ .pdf, preview PNG)",
+  "group": "templates",
+  "purpose": "Product announcement 4:5",
+  "format": "HTML, PDF, PNG",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "templates/social/WFS_Social_Cover_1584x396.html (+ .pdf, preview PNG)",
+  "group": "templates",
+  "purpose": "LinkedIn / social cover 4:1",
+  "format": "HTML, PDF, PNG",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "templates/email-signature/WFS_Email_Signature.html",
+  "group": "templates",
+  "purpose": "Email signature (table layout, live text)",
+  "format": "HTML",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "logo|icon|wordmark/ai/README.md + source/illustrator/export_ai.jsx",
+  "group": "ai",
+  "purpose": "Explains AI status; Illustrator script to create genuine .ai from the SVG masters",
+  "format": "Markdown, JSX",
+  "variant": "",
+  "backgrounds": ""
+ },
+ {
+  "asset": "logo/preview/WFS_Logo_Matrix_Preview.png \u00b7 WFS_Icon_Matrix_Preview.png",
+  "group": "logo/preview",
+  "purpose": "Contact sheets: every lockup / icon on its intended ground (preview, not for reproduction)",
+  "format": "PNG (opaque)",
+  "variant": "",
+  "backgrounds": ""
+ }
+]

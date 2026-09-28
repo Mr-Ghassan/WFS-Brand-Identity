@@ -1,0 +1,472 @@
+[
+ {
+  "asset": "WFS_Icon_Primary",
+  "group": "icon",
+  "purpose": "Primary icon, light grounds",
+  "variant": "Full colour (flat)",
+  "colour": "Mint / Teal / Deep / Teal / Dark",
+  "backgrounds": "#F3F5F2, white, light photography",
+  "svg": "icon/svg/WFS_Icon_Primary.svg",
+  "pdf": "icon/pdf/WFS_Icon_Primary.pdf",
+  "png": [
+   "icon/png/WFS_Icon_Primary_512px.png",
+   "icon/png/WFS_Icon_Primary_1024px.png",
+   "icon/png/WFS_Icon_Primary_2048px.png",
+   "icon/png/WFS_Icon_Primary_4096px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Icon_Inverse",
+  "group": "icon",
+  "purpose": "Primary icon, dark grounds",
+  "variant": "Full colour inverse (flat)",
+  "colour": "Mint / Teal / Teal 800 / Teal / Teal 700",
+  "backgrounds": "#022329, #0E3D42, black, dark photography",
+  "svg": "icon/svg/WFS_Icon_Inverse.svg",
+  "pdf": "icon/pdf/WFS_Icon_Inverse.pdf",
+  "png": [
+   "icon/png/WFS_Icon_Inverse_512px.png",
+   "icon/png/WFS_Icon_Inverse_1024px.png",
+   "icon/png/WFS_Icon_Inverse_2048px.png",
+   "icon/png/WFS_Icon_Inverse_4096px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Icon_Flat_Teal",
+  "group": "icon",
+  "purpose": "One-colour brand teal",
+  "variant": "One colour",
+  "colour": "#14B8A6",
+  "backgrounds": "#022329, #0E3D42, white, #F3F5F2",
+  "svg": "icon/svg/WFS_Icon_Flat_Teal.svg",
+  "pdf": "icon/pdf/WFS_Icon_Flat_Teal.pdf",
+  "png": [
+   "icon/png/WFS_Icon_Flat_Teal_512px.png",
+   "icon/png/WFS_Icon_Flat_Teal_1024px.png",
+   "icon/png/WFS_Icon_Flat_Teal_2048px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Icon_Dark",
+  "group": "icon",
+  "purpose": "One-colour dark (documents, UI, print)",
+  "variant": "One colour",
+  "colour": "#022329",
+  "backgrounds": "#F3F5F2, white, light photography",
+  "svg": "icon/svg/WFS_Icon_Dark.svg",
+  "pdf": "icon/pdf/WFS_Icon_Dark.pdf",
+  "png": [
+   "icon/png/WFS_Icon_Dark_512px.png",
+   "icon/png/WFS_Icon_Dark_1024px.png",
+   "icon/png/WFS_Icon_Dark_2048px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Icon_White",
+  "group": "icon",
+  "purpose": "One-colour reversed",
+  "variant": "One colour",
+  "colour": "#FFFFFF",
+  "backgrounds": "#022329, #0E3D42, black, dark photography",
+  "svg": "icon/svg/WFS_Icon_White.svg",
+  "pdf": "icon/pdf/WFS_Icon_White.pdf",
+  "png": [
+   "icon/png/WFS_Icon_White_512px.png",
+   "icon/png/WFS_Icon_White_1024px.png",
+   "icon/png/WFS_Icon_White_2048px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Icon_Black",
+  "group": "icon",
+  "purpose": "Black-only reproduction (fax, stamps, engraving)",
+  "variant": "One colour",
+  "colour": "#000000",
+  "backgrounds": "white, light neutral grounds",
+  "svg": "icon/svg/WFS_Icon_Black.svg",
+  "pdf": "icon/pdf/WFS_Icon_Black.pdf",
+  "png": [
+   "icon/png/WFS_Icon_Black_512px.png",
+   "icon/png/WFS_Icon_Black_1024px.png",
+   "icon/png/WFS_Icon_Black_2048px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Icon_Monochrome",
+  "group": "icon",
+  "purpose": "Greyscale print (light grounds)",
+  "variant": "Greyscale tonal",
+  "colour": "Greys",
+  "backgrounds": "white, light grounds",
+  "svg": "icon/svg/WFS_Icon_Monochrome.svg",
+  "pdf": "icon/pdf/WFS_Icon_Monochrome.pdf",
+  "png": [
+   "icon/png/WFS_Icon_Monochrome_512px.png",
+   "icon/png/WFS_Icon_Monochrome_1024px.png",
+   "icon/png/WFS_Icon_Monochrome_2048px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Icon_Monochrome_Light",
+  "group": "icon",
+  "purpose": "Greyscale print (dark grounds)",
+  "variant": "Greyscale tonal (light)",
+  "colour": "Light greys",
+  "backgrounds": "black, dark grounds",
+  "svg": "icon/svg/WFS_Icon_Monochrome_Light.svg",
+  "pdf": "icon/pdf/WFS_Icon_Monochrome_Light.pdf",
+  "png": [
+   "icon/png/WFS_Icon_Monochrome_Light_512px.png",
+   "icon/png/WFS_Icon_Monochrome_Light_1024px.png",
+   "icon/png/WFS_Icon_Monochrome_Light_2048px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Icon_Premium",
+  "group": "icon",
+  "purpose": "Launch, keynote, hero and event use only",
+  "variant": "Premium display",
+  "colour": "Premium gradient set (dark ground)",
+  "backgrounds": "#022329, #0E3D42, black, dark photography",
+  "svg": "icon/svg/WFS_Icon_Premium.svg",
+  "pdf": "icon/pdf/WFS_Icon_Premium.pdf",
+  "png": [
+   "icon/png/WFS_Icon_Premium_512px.png",
+   "icon/png/WFS_Icon_Premium_1024px.png",
+   "icon/png/WFS_Icon_Premium_2048px.png",
+   "icon/png/WFS_Icon_Premium_4096px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Icon_Premium_Light",
+  "group": "icon",
+  "purpose": "Premium display on light grounds",
+  "variant": "Premium display",
+  "colour": "Premium gradient set (light ground)",
+  "backgrounds": "#F3F5F2, white, light photography",
+  "svg": "icon/svg/WFS_Icon_Premium_Light.svg",
+  "pdf": "icon/pdf/WFS_Icon_Premium_Light.pdf",
+  "png": [
+   "icon/png/WFS_Icon_Premium_Light_512px.png",
+   "icon/png/WFS_Icon_Premium_Light_1024px.png",
+   "icon/png/WFS_Icon_Premium_Light_2048px.png",
+   "icon/png/WFS_Icon_Premium_Light_4096px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Wordmark_Primary",
+  "group": "wordmark",
+  "purpose": "Primary wordmark",
+  "variant": "Primary (WFS Dark)",
+  "colour": "#022329",
+  "backgrounds": "#F3F5F2, white, light photography",
+  "svg": "wordmark/svg/WFS_Wordmark_Primary.svg",
+  "pdf": "wordmark/pdf/WFS_Wordmark_Primary.pdf",
+  "png": [
+   "wordmark/png/WFS_Wordmark_Primary_1024px.png",
+   "wordmark/png/WFS_Wordmark_Primary_2048px.png",
+   "wordmark/png/WFS_Wordmark_Primary_4096px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Wordmark_Inverse",
+  "group": "wordmark",
+  "purpose": "Wordmark on dark grounds",
+  "variant": "Inverse (Off-White)",
+  "colour": "#F3F5F2",
+  "backgrounds": "#022329, #0E3D42, black, dark photography",
+  "svg": "wordmark/svg/WFS_Wordmark_Inverse.svg",
+  "pdf": "wordmark/pdf/WFS_Wordmark_Inverse.pdf",
+  "png": [
+   "wordmark/png/WFS_Wordmark_Inverse_1024px.png",
+   "wordmark/png/WFS_Wordmark_Inverse_2048px.png",
+   "wordmark/png/WFS_Wordmark_Inverse_4096px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Wordmark_White",
+  "group": "wordmark",
+  "purpose": "Pure white reproduction",
+  "variant": "One colour",
+  "colour": "#FFFFFF",
+  "backgrounds": "#022329, #0E3D42, black, dark photography",
+  "svg": "wordmark/svg/WFS_Wordmark_White.svg",
+  "pdf": "wordmark/pdf/WFS_Wordmark_White.pdf",
+  "png": [
+   "wordmark/png/WFS_Wordmark_White_1024px.png",
+   "wordmark/png/WFS_Wordmark_White_2048px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Wordmark_Black",
+  "group": "wordmark",
+  "purpose": "Black-only / greyscale reproduction",
+  "variant": "One colour / monochrome",
+  "colour": "#000000",
+  "backgrounds": "white, light grounds",
+  "svg": "wordmark/svg/WFS_Wordmark_Black.svg",
+  "pdf": "wordmark/pdf/WFS_Wordmark_Black.pdf",
+  "png": [
+   "wordmark/png/WFS_Wordmark_Black_1024px.png",
+   "wordmark/png/WFS_Wordmark_Black_2048px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Wordmark_Teal",
+  "group": "wordmark",
+  "purpose": "Accent use on dark grounds only",
+  "variant": "One colour",
+  "colour": "#14B8A6",
+  "backgrounds": "#022329, #0E3D42",
+  "svg": "wordmark/svg/WFS_Wordmark_Teal.svg",
+  "pdf": "wordmark/pdf/WFS_Wordmark_Teal.pdf",
+  "png": [
+   "wordmark/png/WFS_Wordmark_Teal_1024px.png",
+   "wordmark/png/WFS_Wordmark_Teal_2048px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Wordmark_Premium",
+  "group": "wordmark",
+  "purpose": "Launch / hero display only",
+  "variant": "Premium display",
+  "colour": "Off-white \u2192 Mint 200 + teal folds",
+  "backgrounds": "#022329, #0E3D42, black, dark photography",
+  "svg": "wordmark/svg/WFS_Wordmark_Premium.svg",
+  "pdf": "wordmark/pdf/WFS_Wordmark_Premium.pdf",
+  "png": [
+   "wordmark/png/WFS_Wordmark_Premium_1024px.png",
+   "wordmark/png/WFS_Wordmark_Premium_2048px.png",
+   "wordmark/png/WFS_Wordmark_Premium_4096px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Wordmark_Premium_Light",
+  "group": "wordmark",
+  "purpose": "Premium display on light grounds",
+  "variant": "Premium display",
+  "colour": "Deep \u2192 Dark + mint folds",
+  "backgrounds": "#F3F5F2, white, light photography",
+  "svg": "wordmark/svg/WFS_Wordmark_Premium_Light.svg",
+  "pdf": "wordmark/pdf/WFS_Wordmark_Premium_Light.pdf",
+  "png": [
+   "wordmark/png/WFS_Wordmark_Premium_Light_1024px.png",
+   "wordmark/png/WFS_Wordmark_Premium_Light_2048px.png",
+   "wordmark/png/WFS_Wordmark_Premium_Light_4096px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Logo_Horizontal_Primary",
+  "group": "logo",
+  "purpose": "Primary logo",
+  "variant": "PRIMARY \u2014 full colour",
+  "colour": "Primary icon + #022329",
+  "backgrounds": "#F3F5F2, white, light photography",
+  "svg": "logo/svg/WFS_Logo_Horizontal_Primary.svg",
+  "pdf": "logo/pdf/WFS_Logo_Horizontal_Primary.pdf",
+  "png": [
+   "logo/png/WFS_Logo_Horizontal_Primary_1024px.png",
+   "logo/png/WFS_Logo_Horizontal_Primary_2048px.png",
+   "logo/png/WFS_Logo_Horizontal_Primary_4096px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Logo_Horizontal_Inverse",
+  "group": "logo",
+  "purpose": "Primary logo on dark grounds",
+  "variant": "Inverse \u2014 full colour",
+  "colour": "Inverse icon + #F3F5F2",
+  "backgrounds": "#022329, #0E3D42, black, dark photography",
+  "svg": "logo/svg/WFS_Logo_Horizontal_Inverse.svg",
+  "pdf": "logo/pdf/WFS_Logo_Horizontal_Inverse.pdf",
+  "png": [
+   "logo/png/WFS_Logo_Horizontal_Inverse_1024px.png",
+   "logo/png/WFS_Logo_Horizontal_Inverse_2048px.png",
+   "logo/png/WFS_Logo_Horizontal_Inverse_4096px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Logo_Horizontal_Dark",
+  "group": "logo",
+  "purpose": "Documents, forms, one-colour print",
+  "variant": "One colour dark",
+  "colour": "#022329",
+  "backgrounds": "#F3F5F2, white, light photography",
+  "svg": "logo/svg/WFS_Logo_Horizontal_Dark.svg",
+  "pdf": "logo/pdf/WFS_Logo_Horizontal_Dark.pdf",
+  "png": [
+   "logo/png/WFS_Logo_Horizontal_Dark_1024px.png",
+   "logo/png/WFS_Logo_Horizontal_Dark_2048px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Logo_Horizontal_White",
+  "group": "logo",
+  "purpose": "Reversed one colour, photography",
+  "variant": "One colour white",
+  "colour": "#FFFFFF",
+  "backgrounds": "#022329, #0E3D42, black, dark photography",
+  "svg": "logo/svg/WFS_Logo_Horizontal_White.svg",
+  "pdf": "logo/pdf/WFS_Logo_Horizontal_White.pdf",
+  "png": [
+   "logo/png/WFS_Logo_Horizontal_White_1024px.png",
+   "logo/png/WFS_Logo_Horizontal_White_2048px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Logo_Horizontal_Black",
+  "group": "logo",
+  "purpose": "Black-only reproduction",
+  "variant": "One colour black",
+  "colour": "#000000",
+  "backgrounds": "white, light grounds",
+  "svg": "logo/svg/WFS_Logo_Horizontal_Black.svg",
+  "pdf": "logo/pdf/WFS_Logo_Horizontal_Black.pdf",
+  "png": [
+   "logo/png/WFS_Logo_Horizontal_Black_1024px.png",
+   "logo/png/WFS_Logo_Horizontal_Black_2048px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Logo_Horizontal_Monochrome",
+  "group": "logo",
+  "purpose": "Greyscale print",
+  "variant": "Greyscale",
+  "colour": "Greys",
+  "backgrounds": "white, light grounds",
+  "svg": "logo/svg/WFS_Logo_Horizontal_Monochrome.svg",
+  "pdf": "logo/pdf/WFS_Logo_Horizontal_Monochrome.pdf",
+  "png": [
+   "logo/png/WFS_Logo_Horizontal_Monochrome_1024px.png",
+   "logo/png/WFS_Logo_Horizontal_Monochrome_2048px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Logo_Horizontal_Monochrome_Light",
+  "group": "logo",
+  "purpose": "Greyscale print on dark",
+  "variant": "Greyscale (light)",
+  "colour": "Light greys",
+  "backgrounds": "black, dark grounds",
+  "svg": "logo/svg/WFS_Logo_Horizontal_Monochrome_Light.svg",
+  "pdf": "logo/pdf/WFS_Logo_Horizontal_Monochrome_Light.pdf",
+  "png": [
+   "logo/png/WFS_Logo_Horizontal_Monochrome_Light_1024px.png",
+   "logo/png/WFS_Logo_Horizontal_Monochrome_Light_2048px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Logo_Horizontal_Premium",
+  "group": "logo",
+  "purpose": "Launch, keynote, event screens",
+  "variant": "Premium display",
+  "colour": "Premium gradients",
+  "backgrounds": "#022329, #0E3D42, black, dark photography",
+  "svg": "logo/svg/WFS_Logo_Horizontal_Premium.svg",
+  "pdf": "logo/pdf/WFS_Logo_Horizontal_Premium.pdf",
+  "png": [
+   "logo/png/WFS_Logo_Horizontal_Premium_1024px.png",
+   "logo/png/WFS_Logo_Horizontal_Premium_2048px.png",
+   "logo/png/WFS_Logo_Horizontal_Premium_4096px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Logo_Horizontal_Premium_Light",
+  "group": "logo",
+  "purpose": "Premium display on light grounds",
+  "variant": "Premium display (light)",
+  "colour": "Premium gradients",
+  "backgrounds": "#F3F5F2, white, light photography",
+  "svg": "logo/svg/WFS_Logo_Horizontal_Premium_Light.svg",
+  "pdf": "logo/pdf/WFS_Logo_Horizontal_Premium_Light.pdf",
+  "png": [
+   "logo/png/WFS_Logo_Horizontal_Premium_Light_1024px.png",
+   "logo/png/WFS_Logo_Horizontal_Premium_Light_2048px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Logo_Full_English",
+  "group": "logo",
+  "purpose": "Formal / first-contact communication",
+  "variant": "Full lockup (descriptor)",
+  "colour": "Primary + Deep Teal descriptor",
+  "backgrounds": "#F3F5F2, white, light photography",
+  "svg": "logo/svg/WFS_Logo_Full_English.svg",
+  "pdf": "logo/pdf/WFS_Logo_Full_English.pdf",
+  "png": [
+   "logo/png/WFS_Logo_Full_English_1024px.png",
+   "logo/png/WFS_Logo_Full_English_2048px.png",
+   "logo/png/WFS_Logo_Full_English_4096px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Logo_Full_English_Inverse",
+  "group": "logo",
+  "purpose": "Formal use on dark grounds",
+  "variant": "Full lockup (descriptor) inverse",
+  "colour": "Inverse + Mint descriptor",
+  "backgrounds": "#022329, #0E3D42, black, dark photography",
+  "svg": "logo/svg/WFS_Logo_Full_English_Inverse.svg",
+  "pdf": "logo/pdf/WFS_Logo_Full_English_Inverse.pdf",
+  "png": [
+   "logo/png/WFS_Logo_Full_English_Inverse_1024px.png",
+   "logo/png/WFS_Logo_Full_English_Inverse_2048px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Logo_Stacked_Primary",
+  "group": "logo",
+  "purpose": "Square / vertical formats",
+  "variant": "Stacked",
+  "colour": "Primary",
+  "backgrounds": "#F3F5F2, white, light photography",
+  "svg": "logo/svg/WFS_Logo_Stacked_Primary.svg",
+  "pdf": "logo/pdf/WFS_Logo_Stacked_Primary.pdf",
+  "png": [
+   "logo/png/WFS_Logo_Stacked_Primary_1024px.png",
+   "logo/png/WFS_Logo_Stacked_Primary_2048px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Logo_Stacked_Inverse",
+  "group": "logo",
+  "purpose": "Splash screens, square formats",
+  "variant": "Stacked inverse",
+  "colour": "Inverse",
+  "backgrounds": "#022329, #0E3D42, black, dark photography",
+  "svg": "logo/svg/WFS_Logo_Stacked_Inverse.svg",
+  "pdf": "logo/pdf/WFS_Logo_Stacked_Inverse.pdf",
+  "png": [
+   "logo/png/WFS_Logo_Stacked_Inverse_1024px.png",
+   "logo/png/WFS_Logo_Stacked_Inverse_2048px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Logo_Endorsed_Primary",
+  "group": "logo",
+  "purpose": "Corporate / investor contexts only",
+  "variant": "Endorsed (A WUSOOL Tech Product)",
+  "colour": "Primary + Slate 600",
+  "backgrounds": "#F3F5F2, white, light photography",
+  "svg": "logo/svg/WFS_Logo_Endorsed_Primary.svg",
+  "pdf": "logo/pdf/WFS_Logo_Endorsed_Primary.pdf",
+  "png": [
+   "logo/png/WFS_Logo_Endorsed_Primary_1024px.png",
+   "logo/png/WFS_Logo_Endorsed_Primary_2048px.png"
+  ]
+ },
+ {
+  "asset": "WFS_Logo_Endorsed_Inverse",
+  "group": "logo",
+  "purpose": "Corporate contexts on dark",
+  "variant": "Endorsed inverse",
+  "colour": "Inverse + Mist 300",
+  "backgrounds": "#022329, #0E3D42, black, dark photography",
+  "svg": "logo/svg/WFS_Logo_Endorsed_Inverse.svg",
+  "pdf": "logo/pdf/WFS_Logo_Endorsed_Inverse.pdf",
+  "png": [
+   "logo/png/WFS_Logo_Endorsed_Inverse_1024px.png",
+   "logo/png/WFS_Logo_Endorsed_Inverse_2048px.png"
+  ]
+ }
+]

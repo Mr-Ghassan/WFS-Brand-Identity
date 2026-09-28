@@ -1,0 +1,8 @@
+/* WFS Brand Identity v1.0 — gradient system */
+:root {
+  --wfs-gradient-primary: linear-gradient(135deg, #14B8A6 0%, #7FE3D6 100%);
+  --wfs-gradient-deep: linear-gradient(160deg, #0E3D42 0%, #022329 100%);
+  --wfs-gradient-light: linear-gradient(180deg, #FFFFFF 0%, #F3F5F2 100%);
+  --wfs-gradient-ambient: radial-gradient(120% 90% at 68% 40%, rgba(20,184,166,0.28) 0%, rgba(14,61,66,0.0) 45%), #022329;
+  --wfs-gradient-premium: linear-gradient(145deg, #7FE3D6 0%, #14B8A6 38%, #0E3D42 78%, #022329 100%);
+}
